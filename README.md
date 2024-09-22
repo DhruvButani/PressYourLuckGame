@@ -1,4 +1,4 @@
-# ece353-mtb-team28-submit-app
+# ece353-mtb-dbutani-submit-app
 
 
 
@@ -15,14 +15,14 @@ Already a pro? Just edit this README.md and make it your own. Want to make it ea
 
 ```
 cd existing_repo
-git remote add origin https://git.doit.wisc.edu/engr/ece/cmpe_courses/ece-353-student-subgroup/f24/team28/ece353-mtb-team28-submit-app.git
+git remote add origin https://git.doit.wisc.edu/engr/ece/cmpe_courses/ece-353-student-subgroup/f24/team28/ece353-mtb-dbutani-submit-app.git
 git branch -M main
 git push -uf origin main
 ```
 
 ## Integrate with your tools
 
-- [ ] [Set up project integrations](https://git.doit.wisc.edu/engr/ece/cmpe_courses/ece-353-student-subgroup/f24/team28/ece353-mtb-team28-submit-app/-/settings/integrations)
+- [ ] [Set up project integrations](https://git.doit.wisc.edu/engr/ece/cmpe_courses/ece-353-student-subgroup/f24/team28/ece353-mtb-dbutani-submit-app/-/settings/integrations)
 
 ## Collaborate with your team
 
