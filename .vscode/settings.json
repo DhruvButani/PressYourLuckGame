@@ -23,7 +23,8 @@
         "spi.h": "c",
         "pwm-buzzer.h": "c",
         "io-expander.h": "c",
-        "limits": "c"
+        "limits": "c",
+        "pyl.h": "c"
     }
 }
 
