@@ -229,9 +229,18 @@ void pyl_images_randomize(image_t *images)
  */
 void pyl_draw_square(uint8_t square_id) 
 {
-  /* ADD CODE */
+
+  coordinates_t coordinates = IMG_COORD_LUT[square_id];
+  int x = coordinates.pos_x;
+  int y = coordinates.pos_y;
+
+  
+  //draw outer square
+  lcd_draw_rectangle_centered(x,y,IMG_SQUARE_OUTER_HEIGHT,IMG_SQUARE_OUTER_WIDTH,LCD_COLOR_RED);
+  lcd_draw_rectangle_centered(x,y,IMG_SQUARE_INNER_HEIGHT,IMG_SQUARE_INNER_WIDTH,LCD_COLOR_BLACK);
 
 }
+
 
 /**
  * @brief 
@@ -263,8 +272,27 @@ void pyl_draw_square(uint8_t square_id)
 
 void pyl_draw_image(image_t *image) 
 {
-  /* ADD CODE */
+
+  //redraw draw inner square from image->square_id
+  coordinates_t coordinates = IMG_COORD_LUT[image->square_id];
+  int x = coordinates.pos_x;
+  int y = coordinates.pos_y;
+
+  //base square
+  pyl_draw_square(image->square_id);
+
+  //if invert_colors is true, draw image with inverted colors
+  if(image->invert_colors == true) {
+    lcd_draw_image(x,y,image->width,image->height,image->bitmap,image->bcolor,image->fcolor);
+  }
+
+  //if invert_colors is false, draw image with normal colors
+  else {
+    lcd_draw_image(x,y,image->width,image->height,image->bitmap,image->fcolor,image->bcolor);
+  }
+  
 }
+
 
 /**
  * @brief 
@@ -291,9 +319,18 @@ void pyl_draw_image(image_t *image)
  * @param images 
  * Address of the image_t array
  */
+
 static inline void pyl_images_randomize_remaining(image_t *images)
 {
-  /* ADD CODE */
+
+  // Out of remaining squares, set them to random image type
+  for(int i = 0; i < NUM_SQUARES; i++) {
+    if(images[i].image_type == IMG_TYPE_INVALID) {
+
+      image_type_t type = cyhal_trng_generate(&trng_obj) % 7;
+      images[i] = IMG_INFO_LUT[type];
+    }
+  }
 }
 
 /**
@@ -322,7 +359,19 @@ static inline void pyl_images_randomize_remaining(image_t *images)
  */
 static inline void pyl_images_randomize_spins(image_t *images, uint8_t num_spins)
 {
-  /* ADD CODE */
+
+  //generate at least random amount of indexes to a number with extra spin
+  
+  while(num_spins>0) {
+      int index = cyhal_trng_generate(&trng_obj) % NUM_SQUARES;
+      
+      if(images[index].image_type == IMG_TYPE_INVALID) {
+        image_type_t type = pyl_images_get_random_spin();
+        images[index] = IMG_INFO_LUT[type];
+        num_spins--;
+      }
+
+  }  
 }
 
 /**
@@ -341,10 +390,24 @@ static inline void pyl_images_randomize_spins(image_t *images, uint8_t num_spins
  * @param num_whammies 
  * Number of squares that MUST contains a whammy
  */
+
 static inline void pyl_images_randomize_whammies(image_t *images, uint8_t num_whammies)
 {
-  /* ADD CODE */
+
+  //generate at least 3 indexes of images array to whammy
+
+  while(num_whammies>0) {
+      int index = (cyhal_trng_generate(&trng_obj) % NUM_SQUARES);
+      
+      if(images[index].image_type == IMG_TYPE_INVALID) {
+        images[index] = IMG_INFO_LUT[IMG_TYPE_WHAMMY];
+        num_whammies--;
+      }
+
+    }
 }
+
+
 /******************************************************************************
  * END STUDENT DEFINED FUNCTIONS 
  ******************************************************************************/

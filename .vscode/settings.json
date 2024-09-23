@@ -22,7 +22,8 @@
         "typeinfo": "c",
         "spi.h": "c",
         "pwm-buzzer.h": "c",
-        "io-expander.h": "c"
+        "io-expander.h": "c",
+        "limits": "c"
     }
 }
 
