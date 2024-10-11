@@ -3,7 +3,7 @@
 &&_MTB_RECIPE__OPENOCD_CHIP&&=psoc6
 &&_MTB_RECIPE__OPENOCD_CORE&&=cm4
 &&_MTB_RECIPE__QSPI_CFG_PATH&&=bsps/TARGET_ece353/config/GeneratedSource
-&&_MTB_RECIPE__QSPI_CFG_PATH_APPLICATION&&=ece353-mtb-dbutani-submit-app/bsps/TARGET_ece353/config/GeneratedSource
+&&_MTB_RECIPE__QSPI_CFG_PATH_APPLICATION&&=ece353-mtb-team28-submit-app/bsps/TARGET_ece353/config/GeneratedSource
 &&_MTB_RECIPE__MULTICORE_SECOND_CONFIG_VSCODE&&=CM4
 &&_MTB_RECIPE__OPENOCD_MONITOR_CMDS_NAME&&=psoc6
 &&_MTB_RECIPE__MCU_NAME&&=PSoC6
@@ -14,6 +14,6 @@
 &&_MTB_RECIPE__TARGET_PROCESSOR_NUMBER&&=1
 &&_MTB_RECIPE__PROCESSOR_COUNT&&=2
 &&_MTB_RECIPE__OPENOCD_PSOC6_TARGET_AP&&=
-&&_MTB_RECIPE__CM0_CM4_ELF_FILE_APPLICATION&&=ece353-mtb-dbutani-submit-app/build/ece353/Debug/mtb-example-empty-app.elf
+&&_MTB_RECIPE__CM0_CM4_ELF_FILE_APPLICATION&&=ece353-mtb-team28-submit-app/build/ece353/Debug/mtb-example-empty-app.elf
 &&_MTB_RECIPE__CM0_CM4_JLINK_DEVICE&&=CY8C6xx4_CM4_sect128KB
 &&_MTB_RECIPE__OPENOCD_ENABLE_CM0&&=

@@ -78,10 +78,7 @@ void peripheral_init(void)
  */
 void main_app(void)
 {
-
-
-
-
+    printf("test\n");
     image_t *pyl_images = malloc(14*sizeof(image_t));
     uint8_t active_index = 0; 
     game_info_msg_t local_info = {.cmd = CMD_UPDATE_LOCAL_DATA, .score = 0, .spins = 5, .passed = 0};
@@ -101,99 +98,131 @@ void main_app(void)
      * should be located at square 0 (upper left hand square)
      */
 
-    #define NUM_SQUARES 14
+
+    pyl_images_randomize(pyl_images);
+    
+    for (int i = 0; i < 14; i++)
+    {
+        pyl_images[i].square_id = i;
+        pyl_draw_image(&(pyl_images[i]));
+    }
+
+   
+
 
     bool sw1_pressed;
     bool sw2_pressed;
 
-    image_t images[NUM_SQUARES]; 
-    uint32_t reg_val = 0;
 
-    /* Draw the 14 empty squares */
-    /* Use the function pyl_draw_square() to draw an empty square*/
-    for (int i = 0; i < NUM_SQUARES; i++)
-    {
-        pyl_draw_square(i);
-    }
-    
     bool sw1_prev_pressed = false;
     bool sw2_prev_pressed = false;
+
+    pyl_images[active_index].invert_colors = true;
+
+    pyl_draw_image(&pyl_images[active_index]);
+
+    pyl_print_digits_6(local_info.score, LOCATION_LOCAL_SCORE_X , LOCATION_LOCAL_SCORE_Y, COLOR_LOCAL_SCORE, ~COLOR_LOCAL_SCORE);
+    pyl_print_digits_2(local_info.spins, LOCATION_LOCAL_SPINS_X, LOCATION_LOCAL_SPINS_Y, COLOR_LOCAL_SPINS, ~COLOR_LOCAL_SPINS);
+    pyl_print_digits_2(local_info.passed, LOCATION_LOCAL_PASSED_X, LOCATION_LOCAL_PASSED_Y, COLOR_LOCAL_PASSED, ~COLOR_LOCAL_PASSED);
+
 
 
     for (;;)
     {
-        /* Read the push button inputs */
-        reg_val = REG_PUSH_BUTTON_IN;
 
-        // set SW1 button correctly
-        sw1_pressed = ((reg_val & SW1_MASK) == 0x00);
-        sw2_pressed = ((reg_val & SW2_MASK) == 0x00);
+        sw1_pressed = (ECE353_Events.sw1==1);
+        sw2_pressed = (ECE353_Events.sw2==1);
 
-        /* If the falling edge of SW1 is detected, randomize the 14 squares and display them on the LCD */
-        
-        if (sw1_prev_pressed && !sw1_pressed)  // Detect falling edge for SW1
+
+        /* If SW1 is pressed, update the scores and spins */
+        if (sw1_prev_pressed && !sw1_pressed) 
         {
-            pyl_images_randomize(images);
 
-            for (int i = 0; i < NUM_SQUARES; i++)
-            {
-                images[i].square_id = i;
-                pyl_draw_image(&(images[i]));
+            if(pyl_images[active_index].image_type == IMG_TYPE_WHAMMY) {
+                local_info.score = 0;
+                local_info.spins--;
+            }
+
+            else if(pyl_images[active_index].image_type >= 7) {
+                local_info.score += pyl_images[active_index].value;
+            }
+
+            else {
+                local_info.score += pyl_images[active_index].value;
+                local_info.spins--;
+            }
+
+
+            pyl_print_digits_6(local_info.score, LOCATION_LOCAL_SCORE_X , LOCATION_LOCAL_SCORE_Y, COLOR_LOCAL_SCORE, ~COLOR_LOCAL_SCORE);
+            pyl_print_digits_2(local_info.spins, LOCATION_LOCAL_SPINS_X, LOCATION_LOCAL_SPINS_Y, COLOR_LOCAL_SPINS, ~COLOR_LOCAL_SPINS);
+            pyl_print_digits_2(local_info.passed, LOCATION_LOCAL_PASSED_X, LOCATION_LOCAL_PASSED_Y, COLOR_LOCAL_PASSED, ~COLOR_LOCAL_PASSED);
+
+            if(local_info.spins == 0) {
+                break;
             }
         }
 
-        /* If the falling edge of SW2 is detected, draw 14 empty squares */
-        if (sw2_prev_pressed && !sw2_pressed)  // Detect falling edge for SW2
+
+        /* If SW2 is pressed, randomize the 14 squares and display them on the LCD*/
+        if (sw2_prev_pressed && !sw2_pressed)  
         {
-            for (int i = 0; i < NUM_SQUARES; i++)
+            pyl_images_randomize(pyl_images);
+    
+            for (int i = 0; i < 14; i++)
             {
-                pyl_draw_square(i);
+                pyl_images[i].square_id = i;
+                pyl_draw_image(&(pyl_images[i]));
             }
+            
+            pyl_images[active_index].invert_colors = true;
+            pyl_draw_image(&pyl_images[active_index]);
+
         }
 
-        /* Update the previous states for the next loop iteration */
         sw1_prev_pressed = sw1_pressed;
         sw2_prev_pressed = sw2_pressed;
 
         /* Delay for 50mS */
         cyhal_system_delay_ms(50);
 
+        /* If joystick is moved from the center, move the active square */
+        if(ECE353_Events.joystick == 1) {
 
+            Joystick_Pos = joystick_get_pos();
+            
+            pyl_images[active_index].invert_colors = false;
+            pyl_draw_image(&pyl_images[active_index]);
 
-        // sw1_pressed = (ECE353_Events.sw1==1);
-        // sw2_pressed = (ECE353_Events.sw2==1);
+            if(Joystick_Pos == JOYSTICK_POS_UP) {
+                if(active_index == 13) {
+                    active_index = 0;
+                }
+                else{
+                    active_index++;
+                }  
+            }
 
-        // /* If SW1 is pressed, update the scores and spins */
+            if(Joystick_Pos == JOYSTICK_POS_DOWN) {
+                if(active_index == 0) {
+                    active_index = 13;
+                }
+                else{
+                    active_index--;
+                }  
+            }
 
-        // if (sw1_prev_pressed && !sw1_pressed)  // Detect falling edge for SW1
-        // {
-        //     pyl_images_randomize(images);
+            pyl_images[active_index].invert_colors = true;
+            pyl_draw_image(&pyl_images[active_index]);
 
-        //     for (int i = 0; i < NUM_SQUARES; i++)
-        //     {
-        //         images[i].square_id = i;
-        //         pyl_draw_image(&(images[i]));
-        //     }
-        // }
-
-
-        // /* If SW2 is pressed, randomize the 14 squares and display them on the LCD*/
-        // if (sw2_prev_pressed && !sw2_pressed)  // Detect falling edge for SW2
-        // {
-        //     for (int i = 0; i < NUM_SQUARES; i++)
-        //     {
-        //         pyl_draw_square(i);
-        //     }
-        // }
-
-        // sw1_prev_pressed = sw1_pressed;
-        // sw2_prev_pressed = sw2_pressed;
-
-        // /* Delay for 50mS */
-        // cyhal_system_delay_ms(50);
+            ECE353_Events.joystick = 0;
         
-        // /* If joystick is moved from the center, move the active square */
+        }
+
+        cyhal_system_delay_ms(75);
+
     }
+
 }
+
 
 #endif

@@ -8,6 +8,7 @@
  * @copyright Copyright (c) 2024
  * 
  */
+
 #include "main.h"
 
 volatile ece353_events_t ECE353_Events;

@@ -1,4 +1,3 @@
-
 {
     //mtb//  Added by build system's vscode target
     //mtb//
@@ -18,35 +17,7 @@
     "cortex-debug.JLinkGDBServerPath.osx": "/Applications/SEGGER/JLink/JLinkGDBServerCLExe",
     "cortex-debug.JLinkGDBServerPath.linux": "JLinkGDBServerCLExe",
     "files.associations": {
-        "console.h": "c",
-        "typeinfo": "c",
-        "spi.h": "c",
-        "pwm-buzzer.h": "c",
-        "io-expander.h": "c",
-        "limits": "c",
-        "pyl.h": "c",
-        "main.h": "c",
-        "cy_pdl.h": "c",
-        "cyhal.h": "c",
         "cy_retarget_io.h": "c",
-        "pyl_images.h": "c",
-        "pyl_handler_tmr_050_ms.h": "c",
-        "hw01.h": "c"
+        "cybsp.h": "c"
     }
 }
-
-
-
-// {
-//     "files.associations": {
-//         "pyl_images.h": "c",
-//         "hw01.h": "c",
-//         "console.h": "c",
-//         "ctype.h": "c",
-//         "remote_uart.h": "c",
-//         "joystick.h": "c",
-//         "io-lcd.h": "c",
-//         "ft6x06.h": "c",
-//         "lm75.h": "c"
-//     }
-// }

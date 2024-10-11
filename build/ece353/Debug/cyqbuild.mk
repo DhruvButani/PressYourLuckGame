@@ -114,7 +114,6 @@ CY_SEARCH_ALL_FILES:= \
   hw01/hw01.code-workspace \
   hw01/hw01.h \
   hw02/hw02.c \
-  hw02/hw02.code-workspace \
   hw02/hw02.h \
   ice/ice01.c \
   ice/ice02.c \
