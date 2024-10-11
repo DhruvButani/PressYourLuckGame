@@ -24,7 +24,14 @@
         "pwm-buzzer.h": "c",
         "io-expander.h": "c",
         "limits": "c",
-        "pyl.h": "c"
+        "pyl.h": "c",
+        "main.h": "c",
+        "cy_pdl.h": "c",
+        "cyhal.h": "c",
+        "cy_retarget_io.h": "c",
+        "pyl_images.h": "c",
+        "pyl_handler_tmr_050_ms.h": "c",
+        "hw01.h": "c"
     }
 }
 

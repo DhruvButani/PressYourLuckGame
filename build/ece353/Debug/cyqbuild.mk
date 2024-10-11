@@ -113,6 +113,9 @@ CY_SEARCH_ALL_FILES:= \
   hw01/hw01.c \
   hw01/hw01.code-workspace \
   hw01/hw01.h \
+  hw02/hw02.c \
+  hw02/hw02.code-workspace \
+  hw02/hw02.h \
   ice/ice01.c \
   ice/ice02.c \
   ice/ice03.c \
@@ -1107,6 +1110,7 @@ CY_SEARCH_ALL_INCLUDES:= \
   bsps/TARGET_ece353/config \
   drivers \
   hw01 \
+  hw02 \
   press-your-luck \
   ../mtb_shared/retarget-io/release-v1.5.0 \
   ../mtb_shared/cat1cm0p/release-v1.5.0/COMPONENT_CAT1A \
