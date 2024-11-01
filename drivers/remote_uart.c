@@ -42,12 +42,21 @@ void remote_uart_event_handler(void *handler_arg, cyhal_uart_event_t event);
  */
 void remote_uart_tx_string_polling(uint8_t *msg)
 {
-    /* ADD CODE */
-
     /* check to see that msg pointer is not equal to NULL*/
+    if(msg == NULL)
+    {
+        return;
+    }
+    
 
     /* Use the HAL api to print out 1 character at a time until the NULL character is found*/
+    for(uint8_t i = 0; msg[i] != '\0'; i++)
+    {
+        cyhal_uart_putc(&remote_uart_obj, msg[i]);
+    } 
+
 }
+
 
 /**
  * @brief
@@ -66,12 +75,27 @@ bool remote_uart_rx_string_polling(uint8_t *msg)
 
     /* Check to see if there is a new character from the console*/
     /* Wait for 1ms if no character has been received */
+    
+    uint8_t c;
+    rslt = cyhal_uart_getc(&remote_uart_obj,&c,1); //if character is recived under 1 ms add to c, else false
 
-    if (1 /* Determine if a character has been received */)
+
+    if (rslt == CY_RSLT_SUCCESS)
     {
         /* Add the current character to the message*/
+        temp_buffer[buffer_index] = c;
         
         /* If the character returned is a \n, copy the string to msg and return true*/
+        if(c == '\n' || c == '\r') {
+            temp_buffer[buffer_index] = 0;
+            strcpy(msg, temp_buffer);
+            buffer_index = 0;
+            return_value = true;
+        }
+        else {
+            buffer_index++;
+        }
+      
     }
 
     return return_value;
@@ -103,6 +127,9 @@ void remote_uart_event_handler(void *handler_arg, cyhal_uart_event_t event)
         remote_uart_event_handler_process_tx();
     }
 }
+
+
+
 
 void remote_uart_enable_interrupts(void *callback, bool enable_rx_irq, bool enable_tx_irq)
 {

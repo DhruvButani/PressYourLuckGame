@@ -30,7 +30,11 @@ remote_uart_data_t IPC_Rx_Data = {
  */
 static bool pyl_packet_verify(uint8_t *packet)
 {
-    /* ADD CODE */
+    if((packet[0] == 0xA0) && (packet[1] == 0xB1) && (packet[6] == 0xA1)) {
+        return true;
+    }
+
+    return false;
 }
 
 
@@ -46,9 +50,29 @@ static bool pyl_packet_verify(uint8_t *packet)
   * @return true 
   * @return false 
  */
-bool pyl_ipc_rx(game_info_msg_t *game_info)
-{
-    /* ADD CODE */
+bool pyl_ipc_rx(game_info_msg_t *game_info) {
+
+    uint8_t packet[7];
+    
+    if(circular_buffer_empty(Rx_Circular_Buffer) != 7) {
+        return false;
+    }
+    for(int i = 0; i < 7; i++) {
+        packet[i] = circular_buffer_remove(Rx_Circular_Buffer);
+    }
+
+    if(pyl_packet_verify(packet)) {
+        
+        game_info->cmd = packet[1];
+        game_info->score = ((packet[2] << 8) | packet[3]);
+        game_info->spins = packet[4];
+        game_info->passed = packet[5];
+
+        return true;
+    }
+
+    return false;
+
 }
 
 /**
@@ -61,8 +85,20 @@ bool pyl_ipc_rx(game_info_msg_t *game_info)
  *@param game_info 
  */
 bool pyl_ipc_tx(game_info_msg_t *game_info)
-{
-    /* ADD CODE */
+{   
+
+    circular_buffer_add(Tx_Circular_Buffer, REMOTE_PACKET_START);  // 0xA0
+    circular_buffer_add(Tx_Circular_Buffer, CMD_UPDATE_REMOTE_DATA); // 0xB1
+    circular_buffer_add(Tx_Circular_Buffer, (uint8_t)(game_info->score & 0x00FF));
+    circular_buffer_add(Tx_Circular_Buffer, (uint8_t)((game_info->score & 0xFF00) >> 8));
+    circular_buffer_add(Tx_Circular_Buffer, game_info->spins);
+    circular_buffer_add(Tx_Circular_Buffer, game_info->passed);
+    circular_buffer_add(Tx_Circular_Buffer, REMOTE_PACKET_END);   // 0xA1
+
+    // enable tx event 
+    cyhal_uart_enable_event( &remote_uart_obj, (cyhal_uart_event_t)CYHAL_UART_IRQ_TX_EMPTY, 7, true);
+    return true;
+
 }
 
 /**
@@ -83,24 +119,41 @@ void handler_ipc(void *callback_arg, cyhal_uart_event_t event)
     {
       /* An error occurred in Tx */
       /* Insert application code to handle Tx error */
+
     }
     else if ((event & CYHAL_UART_IRQ_RX_NOT_EMPTY) == CYHAL_UART_IRQ_RX_NOT_EMPTY)
     {
-        /* ADD CODE */
 
         /* Read in the current character */
+        char c;
+        if(CY_RSLT_SUCCESS == cyhal_uart_getc(&remote_uart_obj, &c,0)) {
 
-        /* Add the character to the circular buffer */
+            /* If REMOTE_PACKET_END received, set the corresponding bit in ECE353_Event */
+            if(c == REMOTE_PACKET_END) {
+                ECE353_Events.ipc_rx = 1;
+            }
 
-        /* If REMOTE_PACKET_END received, set the corresponding bit in ECE353_Event */
+            /* Add the character to the circular buffer */
+            circular_buffer_add(Rx_Circular_Buffer, c);
+        }
 
     }
+
     else if ((event & CYHAL_UART_IRQ_TX_EMPTY) == CYHAL_UART_IRQ_TX_EMPTY)
     {
         /* The UART finished transferring data, so check and see if
         * there is more data in the circular buffer to send*/
+       if(!circular_buffer_empty(Tx_Circular_Buffer)) {
 
-        /* ADD CODE */
+        // remove from tx buffer -> remote 
+        c = circular_buffer_remove(Tx_Circular_Buffer) ;
+        remote_uart_tx_char_async(c);
+       }
+
+       else {
+        cyhal_uart_enable_event(&remote_uart_obj,(cyhal_uart_event_t)CYHAL_UART_IRQ_TX_EMPTY, 7, false);
+       }
+
     }
 
 }

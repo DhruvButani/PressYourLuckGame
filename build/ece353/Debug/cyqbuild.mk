@@ -2,6 +2,7 @@ CY_SEARCH_ALL_FILES:= \
   .DS_Store \
   .mtbqueryapi \
   ece353-mtb-starter-bm-app.code-workspace \
+  ECE353-Staff-HW03-F24.hex \
   LICENSE \
   main.c \
   main.h \
@@ -115,6 +116,8 @@ CY_SEARCH_ALL_FILES:= \
   hw01/hw01.h \
   hw02/hw02.c \
   hw02/hw02.h \
+  HW03-F24/hw03.c \
+  HW03-F24/hw03.h \
   ice/ice01.c \
   ice/ice02.c \
   ice/ice03.c \
@@ -1110,6 +1113,7 @@ CY_SEARCH_ALL_INCLUDES:= \
   drivers \
   hw01 \
   hw02 \
+  HW03-F24 \
   press-your-luck \
   ../mtb_shared/retarget-io/release-v1.5.0 \
   ../mtb_shared/cat1cm0p/release-v1.5.0/COMPONENT_CAT1A \

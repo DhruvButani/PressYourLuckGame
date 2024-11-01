@@ -134,7 +134,6 @@ void pyl_print_digits_2(uint32_t num, uint16_t x, uint16_t y, uint16_t fcolor, u
         x = x + 15;
     }
 
-
 }
 
 /**

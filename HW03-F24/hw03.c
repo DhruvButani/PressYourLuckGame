@@ -1,6 +1,6 @@
 /**
- * @file hw02.c
- * @author
+ * @file hw03.c
+ * @author 
  * @brief
  * @version 0.1
  * @date 2024-01-08
@@ -9,17 +9,18 @@
  *
  */
 
-#include "hw02.h"
+#include "hw03.h"
 
-
-#if defined(HW02)
+#if defined(HW03)
 
 /*****************************************************************************/
 /* Global Variables                                                          */
 /*****************************************************************************/
-char APP_DESCRIPTION[] = "ECE353: HW02";
+char APP_DESCRIPTION[] = "ECE353: HW03";
 char TEAM[] = "Team28";
-char STUDENTS[] = "Butani, Dhruv & Hern, Thomas";
+char STUDENTS[] = "Butani Dhruv, Hern, Thomas2";
+
+
 
 /* Random Number Generator Handle*/
 cyhal_trng_t trng_obj;
@@ -32,6 +33,7 @@ cyhal_timer_t Hw_Timer_Obj;
 cyhal_timer_cfg_t Hw_Timer_Cfg;
 
 
+
 /**
  * @brief
  * This function will initialize all of the hardware resources for
@@ -42,7 +44,6 @@ cyhal_timer_cfg_t Hw_Timer_Cfg;
  */
 void peripheral_init(void)
 {
-
     /* Enable printf */
     console_init();
 
@@ -64,6 +65,12 @@ void peripheral_init(void)
     /* Start the timer */
     cyhal_timer_start(&Hw_Timer_Obj);
 
+    /* Configure the remote UART for 115200, 8N1*/
+    remote_uart_init();
+
+    /* Enable Rx interrupts for the remote.  Use the handler defined in pyl_ipc.c */
+    remote_uart_enable_interrupts(handler_ipc, true, true);
+
 }
 
 /*****************************************************************************/
@@ -77,11 +84,9 @@ void peripheral_init(void)
  * working on.
  */
 
-
-
 void main_app(void)
 {
-    printf("test\n");
+
     image_t *pyl_images = malloc(14*sizeof(image_t));
     uint8_t active_index = 0; 
     game_info_msg_t local_info = {.cmd = CMD_UPDATE_LOCAL_DATA, .score = 0, .spins = 5, .passed = 0};
@@ -101,16 +106,14 @@ void main_app(void)
      * should be located at square 0 (upper left hand square)
      */
 
-
     pyl_images_randomize(pyl_images);
     
-    for (int i = 0; i < 14; i++)
-    {
+    for (int i = 0; i < 14; i++) {
         pyl_images[i].square_id = i;
         pyl_draw_image(&(pyl_images[i]));
     }
 
-   
+    bool gameOver = false;
 
     bool sw1_pressed;
     bool sw2_pressed;
@@ -129,8 +132,11 @@ void main_app(void)
 
 
 
-    for (;;)
-    {
+    for (;;) {
+        
+        if(gameOver) {
+            break;
+        }
 
         sw1_pressed = (ECE353_Events.sw1==1);
         sw2_pressed = (ECE353_Events.sw2==1);
@@ -159,23 +165,25 @@ void main_app(void)
             pyl_print_digits_2(local_info.spins, LOCATION_LOCAL_SPINS_X, LOCATION_LOCAL_SPINS_Y, COLOR_LOCAL_SPINS, ~COLOR_LOCAL_SPINS);
             pyl_print_digits_2(local_info.passed, LOCATION_LOCAL_PASSED_X, LOCATION_LOCAL_PASSED_Y, COLOR_LOCAL_PASSED, ~COLOR_LOCAL_PASSED);
 
-            if(local_info.spins == 0) {
-                break;
-            }
-        }
 
+            pyl_ipc_tx(&local_info);
+
+            if(local_info.spins == 0) {
+                gameOver = true;
+            }
+
+        }
 
         /* If SW2 is pressed, randomize the 14 squares and display them on the LCD*/
         if (sw2_prev_pressed && !sw2_pressed)  
         {
             pyl_images_randomize(pyl_images);
     
-            for (int i = 0; i < 14; i++)
-            {
+            for (int i = 0; i < 14; i++) {
                 pyl_images[i].square_id = i;
                 pyl_draw_image(&(pyl_images[i]));
             }
-            
+
             pyl_images[active_index].invert_colors = true;
             pyl_draw_image(&pyl_images[active_index]);
 
@@ -208,16 +216,16 @@ void main_app(void)
                 if(active_index == 0) {
                     active_index = 13;
                 }
-                else{
+                else {
                     active_index--;
                 }  
             }
-
+            
             pyl_images[active_index].invert_colors = true;
             pyl_draw_image(&pyl_images[active_index]);
 
             ECE353_Events.joystick = 0;
-        
+
         }
 
         cyhal_system_delay_ms(75);
@@ -225,9 +233,6 @@ void main_app(void)
     }
 
 }
-
-
-
 
 
 #endif

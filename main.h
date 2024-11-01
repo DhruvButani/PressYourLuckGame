@@ -103,8 +103,8 @@
 //#define ICE18        /* In-Class Exercise -- FreeRTOS Task Notifications */
 
 //#define HW01
-#define HW02
-//#define HW03
+//#define HW02
+#define HW03
 //#define HW04
 //#define HW05
 
