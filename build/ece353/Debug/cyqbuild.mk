@@ -49,6 +49,7 @@ CY_SEARCH_ALL_FILES:= \
   bsps/TARGET_ece353/deps/mtb-hal-cat1.mtbx \
   bsps/TARGET_ece353/deps/mtb-pdl-cat1.mtbx \
   bsps/TARGET_ece353/deps/recipe-make-cat1a.mtbx \
+  deps/.DS_Store \
   deps/Add your library dependencies in this folder.txt \
   deps/assetlocks.json \
   deps/retarget-io.mtb \
