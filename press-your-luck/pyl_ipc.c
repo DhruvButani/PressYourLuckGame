@@ -28,6 +28,7 @@ remote_uart_data_t IPC_Rx_Data = {
  * @return false
  * Packet contained invalid data
  */
+
 static bool pyl_packet_verify(uint8_t *packet)
 {
     if((packet[0] == 0xA0) && (packet[1] == 0xB1) && (packet[6] == 0xA1)) {
@@ -57,6 +58,7 @@ bool pyl_ipc_rx(game_info_msg_t *game_info) {
     if(circular_buffer_get_num_bytes(Rx_Circular_Buffer) != 7) {
         return false;
     }
+    
     for(int i = 0; i < 7; i++) {
         packet[i] = circular_buffer_remove(Rx_Circular_Buffer);
     }
