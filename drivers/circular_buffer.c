@@ -18,7 +18,7 @@
 //*****************************************************************************
 Circular_Buffer * circular_buffer_init(uint16_t max_size)
 {
-   /* Allocate memory from the heap fro the circular buffer struct */
+   /* Allocate memory from the heap for the circular buffer struct */
    Circular_Buffer *buffer = malloc(sizeof(Circular_Buffer));
 
    /* Allocate memory from the heap that will be used to store the characters/data
@@ -80,7 +80,7 @@ bool circular_buffer_full(Circular_Buffer *buffer)
    * the circular buffer is full
    */
 
-  if((buffer->produce_count - buffer->consume_count) ==buffer->max_size)
+  if((buffer->produce_count - buffer->consume_count) == buffer->max_size)
   {
     return true;
   }
@@ -100,18 +100,19 @@ bool circular_buffer_add(Circular_Buffer *buffer, char c)
 {
   // Use the function defined above to determine if the circular buffer is full
   // If the circular buffer is full, return false.
-  if(!circular_buffer_full(buffer))
+  if(circular_buffer_full(buffer))
   {
     return false;
   }
 
 
   // Add the data to the circular buffer.  
-
   // Return true to indicate that the data was added to the
   // circular buffer.
 
   buffer->data[buffer->produce_count % buffer->max_size] = c;
+  buffer->produce_count = ((buffer->produce_count+1)%buffer->max_size);
+
   return true;
 
 }
@@ -165,6 +166,7 @@ char circular_buffer_remove(Circular_Buffer *buffer)
   // return the character
   return_char = buffer->data[buffer->consume_count % buffer->max_size];
   buffer->data[buffer->consume_count % buffer->max_size] = 0;
+  buffer->consume_count = ((buffer->consume_count+1)%buffer->max_size);
 
 
   return return_char;

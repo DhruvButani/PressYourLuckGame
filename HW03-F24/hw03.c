@@ -33,7 +33,6 @@ cyhal_timer_t Hw_Timer_Obj;
 cyhal_timer_cfg_t Hw_Timer_Cfg;
 
 
-
 /**
  * @brief
  * This function will initialize all of the hardware resources for
@@ -164,7 +163,6 @@ void main_app(void)
             pyl_print_digits_6(local_info.score, LOCATION_LOCAL_SCORE_X , LOCATION_LOCAL_SCORE_Y, COLOR_LOCAL_SCORE, ~COLOR_LOCAL_SCORE);
             pyl_print_digits_2(local_info.spins, LOCATION_LOCAL_SPINS_X, LOCATION_LOCAL_SPINS_Y, COLOR_LOCAL_SPINS, ~COLOR_LOCAL_SPINS);
             pyl_print_digits_2(local_info.passed, LOCATION_LOCAL_PASSED_X, LOCATION_LOCAL_PASSED_Y, COLOR_LOCAL_PASSED, ~COLOR_LOCAL_PASSED);
-
 
             pyl_ipc_tx(&local_info);
 

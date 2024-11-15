@@ -36,7 +36,7 @@ Circular_Buffer *Tx_Circular_Buffer;
 void remote_uart_tx_char_async(char c)
 {
 
-    if(c == NULL){
+    if(c == NULL) {
         return;
     }
 
@@ -85,10 +85,10 @@ void remote_uart_tx_data_async(char *msg, uint16_t num_bytes)
     {
         /* Wait while the circular buffer is full*/
         uint8_t i = 0;
-        while(circular_buffer_full(Tx_Circular_Buffer))
-        {
+        // while(circular_buffer_full(Tx_Circular_Buffer))
+        // {
         
-        }
+        // }
 
         /* Disable interrupts -- Disable NVIC */
         __disable_fault_irq();
@@ -119,13 +119,13 @@ void remote_uart_tx_data_async(char *msg, uint16_t num_bytes)
 
 /**
  * @brief
- * Initializes the Circular Buffer used for transmitting characters to the remote UART
+ * Initializes the Circular Buffer used for transmitting characters to the remote UART to 
  * and will disable Tx Empty interrupts.
  */
 void remote_uart_tx_interrupts_init(void)
-{
+{   uint8_t max_size = 7;
     /* Initialize the Tx Circular Buffer */
-    Tx_Circular_Buffer = circular_buffer_init(7);
+    Tx_Circular_Buffer = circular_buffer_init(max_size); //remote: 7 as buffer operates properly
 
     /* Turn Off Tx Interrupts*/
     cyhal_uart_enable_event(
@@ -134,15 +134,19 @@ void remote_uart_tx_interrupts_init(void)
         7,
         false
     );
-    
+
 }
+
+
+
 
 /**
  * @brief
  * Implements the Tx portion of the UART Handler
  */
 void remote_uart_event_handler_process_tx(void)
-{
+{   
+    char c;
     /* The UART finished transferring data, so check and see if
      * the circular buffer is empty*/
     if (1 == circular_buffer_empty(Tx_Circular_Buffer))

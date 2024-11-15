@@ -54,7 +54,7 @@ bool pyl_ipc_rx(game_info_msg_t *game_info) {
 
     uint8_t packet[7];
     
-    if(circular_buffer_empty(Rx_Circular_Buffer) != 7) {
+    if(circular_buffer_get_num_bytes(Rx_Circular_Buffer) != 7) {
         return false;
     }
     for(int i = 0; i < 7; i++) {
@@ -85,21 +85,27 @@ bool pyl_ipc_rx(game_info_msg_t *game_info) {
  *@param game_info 
  */
 bool pyl_ipc_tx(game_info_msg_t *game_info)
-{   
-
+{
     circular_buffer_add(Tx_Circular_Buffer, REMOTE_PACKET_START);  // 0xA0
     circular_buffer_add(Tx_Circular_Buffer, CMD_UPDATE_REMOTE_DATA); // 0xB1
-    circular_buffer_add(Tx_Circular_Buffer, (uint8_t)(game_info->score & 0x00FF));
     circular_buffer_add(Tx_Circular_Buffer, (uint8_t)((game_info->score & 0xFF00) >> 8));
+    circular_buffer_add(Tx_Circular_Buffer, (uint8_t)(game_info->score & 0x00FF));
     circular_buffer_add(Tx_Circular_Buffer, game_info->spins);
     circular_buffer_add(Tx_Circular_Buffer, game_info->passed);
     circular_buffer_add(Tx_Circular_Buffer, REMOTE_PACKET_END);   // 0xA1
 
+    for(int i = 0; i<7; i++) {
+        printf("%d ",Tx_Circular_Buffer->data[i]);
+    }
+    printf("\n");
+
     // enable tx event 
-    cyhal_uart_enable_event( &remote_uart_obj, (cyhal_uart_event_t)CYHAL_UART_IRQ_TX_EMPTY, 7, true);
+    cyhal_uart_enable_event(&remote_uart_obj, (cyhal_uart_event_t)CYHAL_UART_IRQ_TX_EMPTY, 7, true); //Transmit buffer is empty
     return true;
 
 }
+
+
 
 /**
  * @brief 
@@ -125,7 +131,6 @@ void handler_ipc(void *callback_arg, cyhal_uart_event_t event)
     {
 
         /* Read in the current character */
-        char c;
         if(CY_RSLT_SUCCESS == cyhal_uart_getc(&remote_uart_obj, &c,0)) {
 
             /* If REMOTE_PACKET_END received, set the corresponding bit in ECE353_Event */
@@ -139,15 +144,16 @@ void handler_ipc(void *callback_arg, cyhal_uart_event_t event)
 
     }
 
-    else if ((event & CYHAL_UART_IRQ_TX_EMPTY) == CYHAL_UART_IRQ_TX_EMPTY)
+    else if ((event & CYHAL_UART_IRQ_TX_EMPTY) == CYHAL_UART_IRQ_TX_EMPTY) //if empty tx_interrupt recieved then process tx buffer 
     {
         /* The UART finished transferring data, so check and see if
         * there is more data in the circular buffer to send*/
        if(!circular_buffer_empty(Tx_Circular_Buffer)) {
 
         // remove from tx buffer -> remote 
-        c = circular_buffer_remove(Tx_Circular_Buffer) ;
+        uint32_t c = circular_buffer_remove(Tx_Circular_Buffer) ;
         remote_uart_tx_char_async(c);
+        
        }
 
        else {

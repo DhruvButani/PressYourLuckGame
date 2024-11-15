@@ -79,7 +79,6 @@ bool remote_uart_rx_string_polling(uint8_t *msg)
     uint8_t c;
     rslt = cyhal_uart_getc(&remote_uart_obj,&c,1); //if character is recived under 1 ms add to c, else false
 
-
     if (rslt == CY_RSLT_SUCCESS)
     {
         /* Add the current character to the message*/
@@ -118,17 +117,15 @@ void remote_uart_event_handler(void *handler_arg, cyhal_uart_event_t event)
         /* An error occurred in Tx */
         /* Insert application code to handle Tx error */
     }
-    else if ((event & CYHAL_UART_IRQ_RX_NOT_EMPTY) == CYHAL_UART_IRQ_RX_NOT_EMPTY)
+    else if ((event & CYHAL_UART_IRQ_RX_NOT_EMPTY) == CYHAL_UART_IRQ_RX_NOT_EMPTY) 
     {
         remote_uart_event_handler_process_rx();
     }
-    else if ((event & CYHAL_UART_IRQ_TX_EMPTY) == CYHAL_UART_IRQ_TX_EMPTY)
+    else if ((event & CYHAL_UART_IRQ_TX_EMPTY) == CYHAL_UART_IRQ_TX_EMPTY) //if empty tx_interrupt recieved then process tx buffer 
     {
         remote_uart_event_handler_process_tx();
     }
 }
-
-
 
 
 void remote_uart_enable_interrupts(void *callback, bool enable_rx_irq, bool enable_tx_irq)
