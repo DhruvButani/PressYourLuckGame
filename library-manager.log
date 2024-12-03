@@ -1,0 +1,329 @@
+Loading the ModusToolbox Technology Packs and Early Access Packs
+Finished loading the ModusToolbox Technology Packs and Early Access Packs (1 ms)
+Loading the tools information
+Finished loading the tools information (4 ms)
+Loading the application in directory '/Users/dhruvbutani/ece353/ece353-mtb-team28-submit-app'
+using cached data from file '/Users/dhruvbutani/ece353/ece353-mtb-team28-submit-app/.mtbqueryapi'
+creating application information from 'get_app_info' data
+finished creating application information from 'get_app_info' data (5 ms)
+Finished loading the application data (25 ms total, 0 make)
+Loading asset repository references
+Finished loading the asset repository references (65 ms)
+Loading the manifest data
+Loading super manfiest files from all sources
+Getting manifests from remote and/or local sources
+Processing system manifest 'https://modustoolbox.infineon.com/manifests/mtb-super-manifest/v2.X/mtb-super-manifest-fv2.xml'
+Downloading super manifest file 'https://modustoolbox.infineon.com/manifests/mtb-super-manifest/v2.X/mtb-super-manifest-fv2.xml'
+Finished loading super manifest files from all sources
+Finished download of file 'https://modustoolbox.infineon.com/manifests/mtb-super-manifest/v2.X/mtb-super-manifest-fv2.xml'
+Starting to parse super manifest with URL 'https://modustoolbox.infineon.com/manifests/mtb-super-manifest/v2.X/mtb-super-manifest-fv2.xml'
+Finished parsing super manifest with URL 'https://modustoolbox.infineon.com/manifests/mtb-super-manifest/v2.X/mtb-super-manifest-fv2.xml'
+Downloading manifest file 'https://github.com/Infineon/mtb-ce-manifest/raw/v2.X/mtb-ce-manifest.xml'
+Downloading manifest file 'https://github.com/Infineon/mtb-ce-manifest/raw/v2.X/mtb-ce-manifest-fv2.xml'
+Downloading manifest file 'https://github.com/Infineon/mtb-bt-app-manifest/raw/v2.X/mtb-bt-app-manifest.xml'
+Downloading manifest file 'https://github.com/Infineon/mtb-bt-app-manifest/raw/v2.X/mtb-bt-app-manifest-fv2.xml'
+Downloading manifest file 'https://github.com/Infineon/cce-app-manifest/raw/v2.X/cce-app-manifest-fv2.xml'
+Downloading manifest file 'https://github.com/Altia-Marketing/altia-ce-manifest/raw/main/altia-ce-manifest-fv2.xml'
+Downloading manifest file 'https://github.com/avnet-iotconnect/avnet-iotc-mtb-ce-manifest/raw/main/avnet-iotc-mtb-ce-manifest-fv2.xml'
+Downloading manifest file 'https://github.com/CyberonEBU/cyberon-mtb-ce-manifest/raw/main/cyberon-mtb-ce-manifest-fv2.xml'
+Downloading manifest file 'https://github.com/edgeimpulse/edgeimpulse-ce-manifest/raw/main/edgeimpulse-ce-manifest-fv2.xml'
+Downloading manifest file 'https://github.com/golioth/mtb-golioth-ce-manifest/raw/main/mtb-golioth-ce-manifest-fv2.xml'
+Downloading manifest file 'https://github.com/memfault/mtb-memfault-ce-manifest/raw/main/mtb-memfault-ce-manifest-fv2.xml'
+Downloading manifest file 'https://github.com/RutronikSystemSolutions/rutronik-ce-manifest/raw/main/rutronik-ce-manifest-fv2.xml'
+Downloading manifest file 'https://github.com/sensiml/sensiml-ce-manifest/raw/main/sensiml-ce-manifest-fv2.xml'
+Downloading manifest file 'https://github.com/Infineon/mtb-bsp-manifest/raw/v2.X/mtb-bsp-manifest.xml'
+Downloading manifest file 'https://github.com/Infineon/mtb-bsp-manifest/raw/v2.X/mtb-bsp-capabilities-manifest.json'
+Downloading manifest file 'https://github.com/Infineon/mtb-bsp-manifest/raw/v2.X/mtb-bsp-manifest-fv2.xml'
+Downloading manifest file 'https://github.com/Infineon/mtb-bsp-manifest/raw/v2.X/mtb-bsp-dependencies-manifest.xml'
+Downloading manifest file 'https://github.com/Infineon/mtb-bt-bsp-manifest/raw/v2.X/mtb-bt-bsp-manifest.xml'
+Downloading manifest file 'https://github.com/Infineon/mtb-bt-bsp-manifest/raw/v2.X/mtb-bt-bsp-manifest-fv2.xml'
+Downloading manifest file 'https://github.com/Infineon/mtb-bt-bsp-manifest/raw/v2.X/mtb-bt-bsp-dependencies-manifest.xml'
+Downloading manifest file 'https://github.com/Inventek/inventek-bsp-manifest/raw/main/inventek-bsp-manifest-fv2.xml'
+Downloading manifest file 'https://github.com/Inventek/inventek-bsp-manifest/raw/main/inventek-bsp-dependencies-manifest.xml'
+Downloading manifest file 'https://github.com/RutronikSystemSolutions/rutronik-bsp-manifest/raw/main/rutronik-bsp-manifest-fv2.xml'
+Downloading manifest file 'https://github.com/RutronikSystemSolutions/rutronik-bsp-manifest/raw/main/rutronik-bsp-dependencies-manifest.xml'
+Downloading manifest file 'https://github.com/Infineon/mtb-mw-manifest/raw/v2.X/mtb-mw-manifest.xml'
+Downloading manifest file 'https://github.com/Infineon/mtb-mw-manifest/raw/v2.X/mtb-mw-manifest-fv2.xml'
+Downloading manifest file 'https://github.com/Infineon/mtb-mw-manifest/raw/v2.X/mtb-mw-dependencies-manifest.xml'
+Downloading manifest file 'https://github.com/Infineon/mtb-bt-mw-manifest/raw/v2.X/mtb-bt-mw-manifest.xml'
+Downloading manifest file 'https://github.com/Infineon/mtb-bt-mw-manifest/raw/v2.X/mtb-bt-mw-manifest-fv2.xml'
+Downloading manifest file 'https://github.com/Infineon/mtb-bt-mw-manifest/raw/v2.X/mtb-bt-mw-dependencies-manifest.xml'
+Downloading manifest file 'https://github.com/Infineon/mtb-wifi-mw-manifest/raw/v2.X/mtb-wifi-mw-manifest.xml'
+Downloading manifest file 'https://github.com/Infineon/mtb-wifi-mw-manifest/raw/v2.X/mtb-wifi-mw-manifest-fv2.xml'
+Downloading manifest file 'https://github.com/Infineon/mtb-wifi-mw-manifest/raw/v2.X/mtb-wifi-mw-dependencies-manifest.xml'
+Downloading manifest file 'https://github.com/avnet-iotconnect/avnet-iotc-mtb-mw-manifest/raw/main/avnet-iotc-mtb-mw-manifest-fv2.xml'
+Downloading manifest file 'https://github.com/CyberonEBU/cyberon-mtb-mw-manifest/raw/main/cyberon-mtb-mw-manifest-fv2.xml'
+Downloading manifest file 'https://github.com/golioth/mtb-golioth-mw-manifest/raw/main/mtb-golioth-mw-manifest-fv2.xml'
+Downloading manifest file 'https://github.com/memfault/mtb-memfault-mw-manifest/raw/main/mtb-memfault-mw-manifest-fv2.xml'
+Downloading manifest file 'https://github.com/sensiml/sensiml-mw-manifest/raw/main/sensiml-mw-manifest-fv2.xml'
+Finished download of file 'https://github.com/Infineon/mtb-ce-manifest/raw/v2.X/mtb-ce-manifest.xml'
+Finished download of file 'https://github.com/Infineon/mtb-ce-manifest/raw/v2.X/mtb-ce-manifest-fv2.xml'
+Finished download of file 'https://github.com/Infineon/mtb-bt-app-manifest/raw/v2.X/mtb-bt-app-manifest.xml'
+Finished download of file 'https://github.com/Infineon/mtb-bt-app-manifest/raw/v2.X/mtb-bt-app-manifest-fv2.xml'
+Finished download of file 'https://github.com/Infineon/cce-app-manifest/raw/v2.X/cce-app-manifest-fv2.xml'
+Finished download of file 'https://github.com/Altia-Marketing/altia-ce-manifest/raw/main/altia-ce-manifest-fv2.xml'
+Finished download of file 'https://github.com/avnet-iotconnect/avnet-iotc-mtb-ce-manifest/raw/main/avnet-iotc-mtb-ce-manifest-fv2.xml'
+Finished download of file 'https://github.com/CyberonEBU/cyberon-mtb-ce-manifest/raw/main/cyberon-mtb-ce-manifest-fv2.xml'
+Finished download of file 'https://github.com/edgeimpulse/edgeimpulse-ce-manifest/raw/main/edgeimpulse-ce-manifest-fv2.xml'
+Finished download of file 'https://github.com/golioth/mtb-golioth-ce-manifest/raw/main/mtb-golioth-ce-manifest-fv2.xml'
+Finished download of file 'https://github.com/memfault/mtb-memfault-ce-manifest/raw/main/mtb-memfault-ce-manifest-fv2.xml'
+Finished download of file 'https://github.com/RutronikSystemSolutions/rutronik-ce-manifest/raw/main/rutronik-ce-manifest-fv2.xml'
+Finished download of file 'https://github.com/sensiml/sensiml-ce-manifest/raw/main/sensiml-ce-manifest-fv2.xml'
+Finished download of file 'https://github.com/Infineon/mtb-bsp-manifest/raw/v2.X/mtb-bsp-manifest.xml'
+Finished download of file 'https://github.com/Infineon/mtb-bsp-manifest/raw/v2.X/mtb-bsp-capabilities-manifest.json'
+Finished download of file 'https://github.com/Infineon/mtb-bsp-manifest/raw/v2.X/mtb-bsp-manifest-fv2.xml'
+Finished download of file 'https://github.com/Infineon/mtb-bsp-manifest/raw/v2.X/mtb-bsp-dependencies-manifest.xml'
+Finished download of file 'https://github.com/Infineon/mtb-bt-bsp-manifest/raw/v2.X/mtb-bt-bsp-manifest.xml'
+Finished download of file 'https://github.com/Infineon/mtb-bt-bsp-manifest/raw/v2.X/mtb-bt-bsp-manifest-fv2.xml'
+Finished download of file 'https://github.com/Infineon/mtb-bt-bsp-manifest/raw/v2.X/mtb-bt-bsp-dependencies-manifest.xml'
+Finished download of file 'https://github.com/Inventek/inventek-bsp-manifest/raw/main/inventek-bsp-manifest-fv2.xml'
+Finished download of file 'https://github.com/Inventek/inventek-bsp-manifest/raw/main/inventek-bsp-dependencies-manifest.xml'
+Finished download of file 'https://github.com/RutronikSystemSolutions/rutronik-bsp-manifest/raw/main/rutronik-bsp-manifest-fv2.xml'
+Finished download of file 'https://github.com/RutronikSystemSolutions/rutronik-bsp-manifest/raw/main/rutronik-bsp-dependencies-manifest.xml'
+Finished download of file 'https://github.com/Infineon/mtb-mw-manifest/raw/v2.X/mtb-mw-manifest.xml'
+Finished download of file 'https://github.com/Infineon/mtb-mw-manifest/raw/v2.X/mtb-mw-manifest-fv2.xml'
+Finished download of file 'https://github.com/Infineon/mtb-mw-manifest/raw/v2.X/mtb-mw-dependencies-manifest.xml'
+Finished download of file 'https://github.com/Infineon/mtb-bt-mw-manifest/raw/v2.X/mtb-bt-mw-manifest.xml'
+Finished download of file 'https://github.com/Infineon/mtb-bt-mw-manifest/raw/v2.X/mtb-bt-mw-manifest-fv2.xml'
+Finished download of file 'https://github.com/Infineon/mtb-bt-mw-manifest/raw/v2.X/mtb-bt-mw-dependencies-manifest.xml'
+Finished download of file 'https://github.com/Infineon/mtb-wifi-mw-manifest/raw/v2.X/mtb-wifi-mw-manifest.xml'
+Finished download of file 'https://github.com/Infineon/mtb-wifi-mw-manifest/raw/v2.X/mtb-wifi-mw-manifest-fv2.xml'
+Finished download of file 'https://github.com/Infineon/mtb-wifi-mw-manifest/raw/v2.X/mtb-wifi-mw-dependencies-manifest.xml'
+Finished download of file 'https://github.com/avnet-iotconnect/avnet-iotc-mtb-mw-manifest/raw/main/avnet-iotc-mtb-mw-manifest-fv2.xml'
+Finished download of file 'https://github.com/CyberonEBU/cyberon-mtb-mw-manifest/raw/main/cyberon-mtb-mw-manifest-fv2.xml'
+Finished download of file 'https://github.com/golioth/mtb-golioth-mw-manifest/raw/main/mtb-golioth-mw-manifest-fv2.xml'
+Finished download of file 'https://github.com/memfault/mtb-memfault-mw-manifest/raw/main/mtb-memfault-mw-manifest-fv2.xml'
+Finished download of file 'https://github.com/sensiml/sensiml-mw-manifest/raw/main/sensiml-mw-manifest-fv2.xml'
+Finished loading the manifest data (2442 ms)
+Starting to refresh dependencies for project 'mtb-example-empty-app'.
+Refreshed all dependencies for project 'mtb-example-empty-app'.
+0 error(s), 0 warning(s)
+Successfully acquired the information.
+Requested to add the asset 'freertos'.
+Starting to refresh dependencies for project 'mtb-example-empty-app'.
+Refreshed all dependencies for project 'mtb-example-empty-app'.
+
+Starting to refresh dependencies for project 'mtb-example-empty-app'.
+Refreshed all dependencies for project 'mtb-example-empty-app'.
+
+Changelog for project "ece353-mtb-team28-submit-app":
+freertos version release-v10.5.002 added
+abstraction-rtos version release-v1.8.2 added
+clib-support version release-v1.5.0 added
+
+Click "Update" to commit the changesUpdating application "ece353-mtb-team28-submit-app" ...
+Starting to commit changes to the filesystem and project 'mtb-example-empty-app'.
+Writing mtb file for asset 'freertos' to the folder '/Users/dhruvbutani/ece353/ece353-mtb-team28-submit-app/deps'.
+Writing mtb file for asset 'abstraction-rtos' to the folder '/Users/dhruvbutani/ece353/ece353-mtb-team28-submit-app/libs'.
+Writing mtb file for asset 'clib-support' to the folder '/Users/dhruvbutani/ece353/ece353-mtb-team28-submit-app/libs'.
+Starting: git -C /Users/dhruvbutani/ece353/mtb_shared/retarget-io/release-v1.5.0 -c advice.detachedHead=false checkout release-v1.5.0 --force
+Starting: git -C /Users/dhruvbutani/ece353/mtb_shared/freertos clone --origin cypress --no-checkout --filter=blob:none https://github.com/cypresssemiconductorco/freertos release-v10.5.002
+Starting: git -C /Users/dhruvbutani/ece353/mtb_shared/cat1cm0p/release-v1.5.0 -c advice.detachedHead=false checkout release-v1.5.0 --force
+Starting: git -C /Users/dhruvbutani/ece353/mtb_shared/cmsis/release-v5.8.0 -c advice.detachedHead=false checkout release-v5.8.0 --force
+HEAD is now at db7f962 Upload retarget-io [1515]
+Success: git -C /Users/dhruvbutani/ece353/mtb_shared/retarget-io/release-v1.5.0 -c advice.detachedHead=false checkout release-v1.5.0 --force
+Finished processing retarget-io
+Starting: git -C /Users/dhruvbutani/ece353/mtb_shared/core-lib/release-v1.4.2 -c advice.detachedHead=false checkout release-v1.4.2 --force
+HEAD is now at 08904a2 Upload cat1cm0p 1.5.0.403 [2307]
+Cloning into 'release-v10.5.002'...
+Success: git -C /Users/dhruvbutani/ece353/mtb_shared/cat1cm0p/release-v1.5.0 -c advice.detachedHead=false checkout release-v1.5.0 --force
+Finished processing cat1cm0p
+Starting: git -C /Users/dhruvbutani/ece353/mtb_shared/core-make/release-v3.3.1 -c advice.detachedHead=false checkout release-v3.3.1 --force
+HEAD is now at ce02f64 Upload cmsis 5.8.0.50
+Success: git -C /Users/dhruvbutani/ece353/mtb_shared/cmsis/release-v5.8.0 -c advice.detachedHead=false checkout release-v5.8.0 --force
+Finished processing cmsis
+Starting: git -C /Users/dhruvbutani/.modustoolbox/global/device-db/release-v4.16.0 -c advice.detachedHead=false checkout release-v4.16.0 --force
+HEAD is now at e28913a Upload core-lib [2455]
+Success: git -C /Users/dhruvbutani/ece353/mtb_shared/core-lib/release-v1.4.2 -c advice.detachedHead=false checkout release-v1.4.2 --force
+Finished processing core-lib
+Starting: git -C /Users/dhruvbutani/ece353/mtb_shared/mtb-hal-cat1/release-v2.6.1 -c advice.detachedHead=false checkout release-v2.6.1 --force
+HEAD is now at 58bf444 Upload core-make 3.3.1.5153 [2252]
+Success: git -C /Users/dhruvbutani/ece353/mtb_shared/core-make/release-v3.3.1 -c advice.detachedHead=false checkout release-v3.3.1 --force
+Finished processing core-make
+Starting: git -C /Users/dhruvbutani/ece353/mtb_shared/mtb-pdl-cat1/release-v3.11.0 -c advice.detachedHead=false checkout release-v3.11.0 --force
+HEAD is now at 08dc1e80 Upload device-db 4.16.0.6098 [2510]
+Success: git -C /Users/dhruvbutani/.modustoolbox/global/device-db/release-v4.16.0 -c advice.detachedHead=false checkout release-v4.16.0 --force
+Finished processing device-db
+Starting: git -C /Users/dhruvbutani/ece353/mtb_shared/recipe-make-cat1a/release-v2.2.1 -c advice.detachedHead=false checkout release-v2.2.1 --force
+HEAD is now at 56ee340 Upload mtb-hal-cat1 [2593]
+Success: git -C /Users/dhruvbutani/ece353/mtb_shared/mtb-hal-cat1/release-v2.6.1 -c advice.detachedHead=false checkout release-v2.6.1 --force
+Finished processing mtb-hal-cat1
+Starting: git -C /Users/dhruvbutani/ece353/mtb_shared/abstraction-rtos clone --origin cypress --no-checkout --filter=blob:none https://github.com/cypresssemiconductorco/abstraction-rtos release-v1.8.2
+HEAD is now at 4eb815b Upload mtb-pdl-cat1 3.11.0.34443 [2542]
+Success: git -C /Users/dhruvbutani/ece353/mtb_shared/mtb-pdl-cat1/release-v3.11.0 -c advice.detachedHead=false checkout release-v3.11.0 --force
+Finished processing mtb-pdl-cat1
+Starting: git -C /Users/dhruvbutani/ece353/mtb_shared/clib-support clone --origin cypress --no-checkout --filter=blob:none https://github.com/cypresssemiconductorco/clib-support release-v1.5.0
+HEAD is now at 3f18eed Upload recipe-make-cat1a 2.2.1.5190 [2313]
+Success: git -C /Users/dhruvbutani/ece353/mtb_shared/recipe-make-cat1a/release-v2.2.1 -c advice.detachedHead=false checkout release-v2.2.1 --force
+Finished processing recipe-make-cat1a
+Cloning into 'release-v1.8.2'...
+Cloning into 'release-v1.5.0'...
+Success: git -C /Users/dhruvbutani/ece353/mtb_shared/freertos clone --origin cypress --no-checkout --filter=blob:none https://github.com/cypresssemiconductorco/freertos release-v10.5.002
+Starting: git -C /Users/dhruvbutani/ece353/mtb_shared/freertos/release-v10.5.002 -c advice.detachedHead=false checkout release-v10.5.002 --force
+Success: git -C /Users/dhruvbutani/ece353/mtb_shared/abstraction-rtos clone --origin cypress --no-checkout --filter=blob:none https://github.com/cypresssemiconductorco/abstraction-rtos release-v1.8.2
+Starting: git -C /Users/dhruvbutani/ece353/mtb_shared/abstraction-rtos/release-v1.8.2 -c advice.detachedHead=false checkout release-v1.8.2 --force
+Success: git -C /Users/dhruvbutani/ece353/mtb_shared/clib-support clone --origin cypress --no-checkout --filter=blob:none https://github.com/cypresssemiconductorco/clib-support release-v1.5.0
+Starting: git -C /Users/dhruvbutani/ece353/mtb_shared/clib-support/release-v1.5.0 -c advice.detachedHead=false checkout release-v1.5.0 --force
+HEAD is now at 654db3a Upload clib-support [2455]
+Success: git -C /Users/dhruvbutani/ece353/mtb_shared/clib-support/release-v1.5.0 -c advice.detachedHead=false checkout release-v1.5.0 --force
+Finished processing clib-support
+HEAD is now at 8498cc2 Upload abstraction-rtos [2654]
+Success: git -C /Users/dhruvbutani/ece353/mtb_shared/abstraction-rtos/release-v1.8.2 -c advice.detachedHead=false checkout release-v1.8.2 --force
+Finished processing abstraction-rtos
+HEAD is now at e175e03 Upload freertos 10.5.002.657 [2307]
+Success: git -C /Users/dhruvbutani/ece353/mtb_shared/freertos/release-v10.5.002 -c advice.detachedHead=false checkout release-v10.5.002 --force
+Finished processing freertos
+Successfully committed changes to the project 'mtb-example-empty-app'.
+0 error(s), 0 warning(s)
+Successfully updated application "ece353-mtb-team28-submit-app"
+
+Starting to refresh dependencies for project 'mtb-example-empty-app'.
+Refreshed all dependencies for project 'mtb-example-empty-app'.
+
+Summary:
+Successfully updated application "ece353-mtb-team28-submit-app"
+Successfully refreshed dependencies.
+Done.
+Starting to refresh dependencies for project 'mtb-example-empty-app'.
+Refreshed all dependencies for project 'mtb-example-empty-app'.
+
+Changelog for project "ece353-mtb-team28-submit-app":
+freertos version release-v10.5.002 added
+abstraction-rtos version release-v1.8.2 added
+clib-support version release-v1.5.0 added
+
+Click "Update" to commit the changes
+
+Updating application "ece353-mtb-team28-submit-app" ...
+Starting to commit changes to the filesystem and project 'mtb-example-empty-app'.
+Writing mtb file for asset 'freertos' to the folder '/Users/dhruvbutani/ece353/ece353-mtb-team28-submit-app/deps'.
+Writing mtb file for asset 'abstraction-rtos' to the folder '/Users/dhruvbutani/ece353/ece353-mtb-team28-submit-app/libs'.
+Writing mtb file for asset 'clib-support' to the folder '/Users/dhruvbutani/ece353/ece353-mtb-team28-submit-app/libs'.
+Starting: git -C /Users/dhruvbutani/ece353/mtb_shared/retarget-io/release-v1.5.0 -c advice.detachedHead=false checkout release-v1.5.0 --force
+Starting: git -C /Users/dhruvbutani/ece353/mtb_shared/freertos clone --origin cypress --no-checkout --filter=blob:none https://github.com/cypresssemiconductorco/freertos release-v10.5.002
+Starting: git -C /Users/dhruvbutani/ece353/mtb_shared/cat1cm0p/release-v1.5.0 -c advice.detachedHead=false checkout release-v1.5.0 --force
+Starting: git -C /Users/dhruvbutani/ece353/mtb_shared/cmsis/release-v5.8.0 -c advice.detachedHead=false checkout release-v5.8.0 --force
+HEAD is now at db7f962 Upload retarget-io [1515]
+Success: git -C /Users/dhruvbutani/ece353/mtb_shared/retarget-io/release-v1.5.0 -c advice.detachedHead=false checkout release-v1.5.0 --force
+Finished processing retarget-io
+Starting: git -C /Users/dhruvbutani/ece353/mtb_shared/core-lib/release-v1.4.2 -c advice.detachedHead=false checkout release-v1.4.2 --force
+HEAD is now at 08904a2 Upload cat1cm0p 1.5.0.403 [2307]
+Cloning into 'release-v10.5.002'...
+Success: git -C /Users/dhruvbutani/ece353/mtb_shared/cat1cm0p/release-v1.5.0 -c advice.detachedHead=false checkout release-v1.5.0 --force
+Finished processing cat1cm0p
+Starting: git -C /Users/dhruvbutani/ece353/mtb_shared/core-make/release-v3.3.1 -c advice.detachedHead=false checkout release-v3.3.1 --force
+HEAD is now at ce02f64 Upload cmsis 5.8.0.50
+Success: git -C /Users/dhruvbutani/ece353/mtb_shared/cmsis/release-v5.8.0 -c advice.detachedHead=false checkout release-v5.8.0 --force
+Finished processing cmsis
+Starting: git -C /Users/dhruvbutani/.modustoolbox/global/device-db/release-v4.16.0 -c advice.detachedHead=false checkout release-v4.16.0 --force
+HEAD is now at e28913a Upload core-lib [2455]
+Success: git -C /Users/dhruvbutani/ece353/mtb_shared/core-lib/release-v1.4.2 -c advice.detachedHead=false checkout release-v1.4.2 --force
+Finished processing core-lib
+Starting: git -C /Users/dhruvbutani/ece353/mtb_shared/mtb-hal-cat1/release-v2.6.1 -c advice.detachedHead=false checkout release-v2.6.1 --force
+HEAD is now at 58bf444 Upload core-make 3.3.1.5153 [2252]
+Success: git -C /Users/dhruvbutani/ece353/mtb_shared/core-make/release-v3.3.1 -c advice.detachedHead=false checkout release-v3.3.1 --force
+Finished processing core-make
+Starting: git -C /Users/dhruvbutani/ece353/mtb_shared/mtb-pdl-cat1/release-v3.11.0 -c advice.detachedHead=false checkout release-v3.11.0 --force
+HEAD is now at 08dc1e80 Upload device-db 4.16.0.6098 [2510]
+Success: git -C /Users/dhruvbutani/.modustoolbox/global/device-db/release-v4.16.0 -c advice.detachedHead=false checkout release-v4.16.0 --force
+Finished processing device-db
+Starting: git -C /Users/dhruvbutani/ece353/mtb_shared/recipe-make-cat1a/release-v2.2.1 -c advice.detachedHead=false checkout release-v2.2.1 --force
+HEAD is now at 56ee340 Upload mtb-hal-cat1 [2593]
+Success: git -C /Users/dhruvbutani/ece353/mtb_shared/mtb-hal-cat1/release-v2.6.1 -c advice.detachedHead=false checkout release-v2.6.1 --force
+Finished processing mtb-hal-cat1
+Starting: git -C /Users/dhruvbutani/ece353/mtb_shared/abstraction-rtos clone --origin cypress --no-checkout --filter=blob:none https://github.com/cypresssemiconductorco/abstraction-rtos release-v1.8.2
+HEAD is now at 4eb815b Upload mtb-pdl-cat1 3.11.0.34443 [2542]
+Success: git -C /Users/dhruvbutani/ece353/mtb_shared/mtb-pdl-cat1/release-v3.11.0 -c advice.detachedHead=false checkout release-v3.11.0 --force
+Finished processing mtb-pdl-cat1
+Starting: git -C /Users/dhruvbutani/ece353/mtb_shared/clib-support clone --origin cypress --no-checkout --filter=blob:none https://github.com/cypresssemiconductorco/clib-support release-v1.5.0
+HEAD is now at 3f18eed Upload recipe-make-cat1a 2.2.1.5190 [2313]
+Success: git -C /Users/dhruvbutani/ece353/mtb_shared/recipe-make-cat1a/release-v2.2.1 -c advice.detachedHead=false checkout release-v2.2.1 --force
+Finished processing recipe-make-cat1a
+Cloning into 'release-v1.8.2'...
+Cloning into 'release-v1.5.0'...
+Success: git -C /Users/dhruvbutani/ece353/mtb_shared/freertos clone --origin cypress --no-checkout --filter=blob:none https://github.com/cypresssemiconductorco/freertos release-v10.5.002
+Starting: git -C /Users/dhruvbutani/ece353/mtb_shared/freertos/release-v10.5.002 -c advice.detachedHead=false checkout release-v10.5.002 --force
+Success: git -C /Users/dhruvbutani/ece353/mtb_shared/abstraction-rtos clone --origin cypress --no-checkout --filter=blob:none https://github.com/cypresssemiconductorco/abstraction-rtos release-v1.8.2
+Starting: git -C /Users/dhruvbutani/ece353/mtb_shared/abstraction-rtos/release-v1.8.2 -c advice.detachedHead=false checkout release-v1.8.2 --force
+Success: git -C /Users/dhruvbutani/ece353/mtb_shared/clib-support clone --origin cypress --no-checkout --filter=blob:none https://github.com/cypresssemiconductorco/clib-support release-v1.5.0
+Starting: git -C /Users/dhruvbutani/ece353/mtb_shared/clib-support/release-v1.5.0 -c advice.detachedHead=false checkout release-v1.5.0 --force
+HEAD is now at 654db3a Upload clib-support [2455]
+Success: git -C /Users/dhruvbutani/ece353/mtb_shared/clib-support/release-v1.5.0 -c advice.detachedHead=false checkout release-v1.5.0 --force
+Finished processing clib-support
+HEAD is now at 8498cc2 Upload abstraction-rtos [2654]
+Success: git -C /Users/dhruvbutani/ece353/mtb_shared/abstraction-rtos/release-v1.8.2 -c advice.detachedHead=false checkout release-v1.8.2 --force
+Finished processing abstraction-rtos
+HEAD is now at e175e03 Upload freertos 10.5.002.657 [2307]
+Success: git -C /Users/dhruvbutani/ece353/mtb_shared/freertos/release-v10.5.002 -c advice.detachedHead=false checkout release-v10.5.002 --force
+Finished processing freertos
+Successfully committed changes to the project 'mtb-example-empty-app'.
+0 error(s), 0 warning(s)
+Successfully updated application "ece353-mtb-team28-submit-app"
+
+Starting to refresh dependencies for project 'mtb-example-empty-app'.
+Refreshed all dependencies for project 'mtb-example-empty-app'.
+
+Summary:
+Successfully updated application "ece353-mtb-team28-submit-app"
+Successfully refreshed dependencies.
+Done.Updating application "ece353-mtb-team28-submit-app" ...
+Starting to commit changes to the filesystem and project 'mtb-example-empty-app'.
+Starting: git -C /Users/dhruvbutani/ece353/mtb_shared/freertos/release-v10.5.002 -c advice.detachedHead=false checkout release-v10.5.002 --force
+Starting: git -C /Users/dhruvbutani/ece353/mtb_shared/retarget-io/release-v1.5.0 -c advice.detachedHead=false checkout release-v1.5.0 --force
+Starting: git -C /Users/dhruvbutani/ece353/mtb_shared/abstraction-rtos/release-v1.8.2 -c advice.detachedHead=false checkout release-v1.8.2 --force
+Starting: git -C /Users/dhruvbutani/ece353/mtb_shared/cat1cm0p/release-v1.5.0 -c advice.detachedHead=false checkout release-v1.5.0 --force
+HEAD is now at db7f962 Upload retarget-io [1515]
+Success: git -C /Users/dhruvbutani/ece353/mtb_shared/retarget-io/release-v1.5.0 -c advice.detachedHead=false checkout release-v1.5.0 --force
+Finished processing retarget-io
+Starting: git -C /Users/dhruvbutani/ece353/mtb_shared/clib-support/release-v1.5.0 -c advice.detachedHead=false checkout release-v1.5.0 --force
+HEAD is now at e175e03 Upload freertos 10.5.002.657 [2307]
+Success: git -C /Users/dhruvbutani/ece353/mtb_shared/freertos/release-v10.5.002 -c advice.detachedHead=false checkout release-v10.5.002 --force
+Finished processing freertos
+Starting: git -C /Users/dhruvbutani/ece353/mtb_shared/cmsis/release-v5.8.0 -c advice.detachedHead=false checkout release-v5.8.0 --force
+HEAD is now at 8498cc2 Upload abstraction-rtos [2654]
+Success: git -C /Users/dhruvbutani/ece353/mtb_shared/abstraction-rtos/release-v1.8.2 -c advice.detachedHead=false checkout release-v1.8.2 --force
+Finished processing abstraction-rtos
+Starting: git -C /Users/dhruvbutani/ece353/mtb_shared/core-lib/release-v1.4.2 -c advice.detachedHead=false checkout release-v1.4.2 --force
+HEAD is now at 08904a2 Upload cat1cm0p 1.5.0.403 [2307]
+Success: git -C /Users/dhruvbutani/ece353/mtb_shared/cat1cm0p/release-v1.5.0 -c advice.detachedHead=false checkout release-v1.5.0 --force
+Finished processing cat1cm0p
+Starting: git -C /Users/dhruvbutani/ece353/mtb_shared/core-make/release-v3.3.1 -c advice.detachedHead=false checkout release-v3.3.1 --force
+HEAD is now at ce02f64 Upload cmsis 5.8.0.50
+Success: git -C /Users/dhruvbutani/ece353/mtb_shared/cmsis/release-v5.8.0 -c advice.detachedHead=false checkout release-v5.8.0 --force
+Finished processing cmsis
+Starting: git -C /Users/dhruvbutani/.modustoolbox/global/device-db/release-v4.16.0 -c advice.detachedHead=false checkout release-v4.16.0 --force
+HEAD is now at 654db3a Upload clib-support [2455]
+Success: git -C /Users/dhruvbutani/ece353/mtb_shared/clib-support/release-v1.5.0 -c advice.detachedHead=false checkout release-v1.5.0 --force
+Finished processing clib-support
+Starting: git -C /Users/dhruvbutani/ece353/mtb_shared/mtb-hal-cat1/release-v2.6.1 -c advice.detachedHead=false checkout release-v2.6.1 --force
+HEAD is now at e28913a Upload core-lib [2455]
+Success: git -C /Users/dhruvbutani/ece353/mtb_shared/core-lib/release-v1.4.2 -c advice.detachedHead=false checkout release-v1.4.2 --force
+Finished processing core-lib
+Starting: git -C /Users/dhruvbutani/ece353/mtb_shared/mtb-pdl-cat1/release-v3.11.0 -c advice.detachedHead=false checkout release-v3.11.0 --force
+HEAD is now at 58bf444 Upload core-make 3.3.1.5153 [2252]
+Success: git -C /Users/dhruvbutani/ece353/mtb_shared/core-make/release-v3.3.1 -c advice.detachedHead=false checkout release-v3.3.1 --force
+Finished processing core-make
+Starting: git -C /Users/dhruvbutani/ece353/mtb_shared/recipe-make-cat1a/release-v2.2.1 -c advice.detachedHead=false checkout release-v2.2.1 --force
+HEAD is now at 08dc1e80 Upload device-db 4.16.0.6098 [2510]
+Success: git -C /Users/dhruvbutani/.modustoolbox/global/device-db/release-v4.16.0 -c advice.detachedHead=false checkout release-v4.16.0 --force
+Finished processing device-db
+HEAD is now at 56ee340 Upload mtb-hal-cat1 [2593]
+Success: git -C /Users/dhruvbutani/ece353/mtb_shared/mtb-hal-cat1/release-v2.6.1 -c advice.detachedHead=false checkout release-v2.6.1 --force
+Finished processing mtb-hal-cat1
+HEAD is now at 4eb815b Upload mtb-pdl-cat1 3.11.0.34443 [2542]
+Success: git -C /Users/dhruvbutani/ece353/mtb_shared/mtb-pdl-cat1/release-v3.11.0 -c advice.detachedHead=false checkout release-v3.11.0 --force
+Finished processing mtb-pdl-cat1
+HEAD is now at 3f18eed Upload recipe-make-cat1a 2.2.1.5190 [2313]
+Success: git -C /Users/dhruvbutani/ece353/mtb_shared/recipe-make-cat1a/release-v2.2.1 -c advice.detachedHead=false checkout release-v2.2.1 --force
+Finished processing recipe-make-cat1a
+Successfully committed changes to the project 'mtb-example-empty-app'.
+0 error(s), 0 warning(s)
+Successfully updated application "ece353-mtb-team28-submit-app"
+
+Starting to refresh dependencies for project 'mtb-example-empty-app'.
+Refreshed all dependencies for project 'mtb-example-empty-app'.
+
+Summary:
+Successfully updated application "ece353-mtb-team28-submit-app"
+Successfully refreshed dependencies.
+Done.

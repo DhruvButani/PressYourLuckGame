@@ -249,7 +249,23 @@
  drivers/remote_uart_tx.h drivers/systick.h drivers/timer.h \
  drivers/pwm-buzzer.h drivers/spi.h drivers/lsm6dsm_reg.h drivers/imu.h \
  drivers/lsm6dsm_reg.h drivers/i2c.h drivers/LM75.h drivers/io-expander.h \
- drivers/i2c.h drivers/ft6x06.h drivers/light-sensor.h
+ drivers/i2c.h drivers/ft6x06.h drivers/light-sensor.h \
+ ../mtb_shared/freertos/release-v10.5.002/Source/include/FreeRTOS.h \
+ ../mtb_shared/freertos/release-v10.5.002/Source/portable/COMPONENT_CM4/FreeRTOSConfig.h \
+ bsps/TARGET_ece353/config/GeneratedSource/cycfg_system.h \
+ ../mtb_shared/freertos/release-v10.5.002/Source/include/projdefs.h \
+ ../mtb_shared/freertos/release-v10.5.002/Source/include/portable.h \
+ ../mtb_shared/freertos/release-v10.5.002/Source/include/deprecated_definitions.h \
+ ../mtb_shared/freertos/release-v10.5.002/Source/portable/COMPONENT_CM4/TOOLCHAIN_GCC_ARM/portmacro.h \
+ ../mtb_shared/freertos/release-v10.5.002/Source/include/mpu_wrappers.h \
+ ../mtb_shared/freertos/release-v10.5.002/Source/include/event_groups.h \
+ ../mtb_shared/freertos/release-v10.5.002/Source/include/timers.h \
+ ../mtb_shared/freertos/release-v10.5.002/Source/include/task.h \
+ ../mtb_shared/freertos/release-v10.5.002/Source/include/list.h \
+ ../mtb_shared/freertos/release-v10.5.002/Source/include/queue.h \
+ ../mtb_shared/freertos/release-v10.5.002/Source/include/semphr.h \
+ ../mtb_shared/freertos/release-v10.5.002/Source/include/queue.h \
+ ../mtb_shared/freertos/release-v10.5.002/Source/include/task.h
 press-your-luck/pyl.h:
 ../mtb_shared/mtb-hal-cat1/release-v2.6.1/include/cyhal.h:
 ../mtb_shared/mtb-hal-cat1/release-v2.6.1/include/cyhal_general_types.h:
@@ -524,3 +540,19 @@ drivers/io-expander.h:
 drivers/i2c.h:
 drivers/ft6x06.h:
 drivers/light-sensor.h:
+../mtb_shared/freertos/release-v10.5.002/Source/include/FreeRTOS.h:
+../mtb_shared/freertos/release-v10.5.002/Source/portable/COMPONENT_CM4/FreeRTOSConfig.h:
+bsps/TARGET_ece353/config/GeneratedSource/cycfg_system.h:
+../mtb_shared/freertos/release-v10.5.002/Source/include/projdefs.h:
+../mtb_shared/freertos/release-v10.5.002/Source/include/portable.h:
+../mtb_shared/freertos/release-v10.5.002/Source/include/deprecated_definitions.h:
+../mtb_shared/freertos/release-v10.5.002/Source/portable/COMPONENT_CM4/TOOLCHAIN_GCC_ARM/portmacro.h:
+../mtb_shared/freertos/release-v10.5.002/Source/include/mpu_wrappers.h:
+../mtb_shared/freertos/release-v10.5.002/Source/include/event_groups.h:
+../mtb_shared/freertos/release-v10.5.002/Source/include/timers.h:
+../mtb_shared/freertos/release-v10.5.002/Source/include/task.h:
+../mtb_shared/freertos/release-v10.5.002/Source/include/list.h:
+../mtb_shared/freertos/release-v10.5.002/Source/include/queue.h:
+../mtb_shared/freertos/release-v10.5.002/Source/include/semphr.h:
+../mtb_shared/freertos/release-v10.5.002/Source/include/queue.h:
+../mtb_shared/freertos/release-v10.5.002/Source/include/task.h:

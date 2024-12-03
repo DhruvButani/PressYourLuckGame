@@ -105,7 +105,6 @@ void lsm6dsm_init(void)
 
   if (whoamI != LSM6DSM_ID)
   {
-    printf("Device not found\n\r");
     while (1)
     {
       /* manage here device not found */
@@ -218,14 +217,21 @@ static int32_t platform_write(void *handle, uint8_t reg, const uint8_t *bufp,
   rx = malloc(sizeof(uint8_t) * (len + 1));
 
   // Write the register address to the first memory location in the Tx buffer
+  tx[0] = reg & 0x7F; //0 tells us write for first bit, rest is the address
 
   // Copy the remaining bytes to the Tx message
+  memcpy(&tx[1],bufp,len); 
+
 
   // Set the CS Low
+  cyhal_gpio_write(PIN_SPI_IMU_CS,0); 
 
   // Starts a data transfer
+  rslt = cyhal_spi_transfer(&mSPI,tx,len+1,rx,len+1,0x00);
 
   // Set the CS High
+  cyhal_gpio_write(PIN_SPI_IMU_CS,1); 
+
 
   free(tx);
   free(rx);
@@ -257,14 +263,19 @@ static int32_t platform_read(void *handle, uint8_t reg, uint8_t *bufp,
   rx = malloc(sizeof(uint8_t) * (len + 1));
 
   // Write the register address to the first memory location in the Tx Message
+  tx[0] = reg | 0x80;
 
   // set the remaining bytes in tx to 0
+  memcpy(&tx[1],0,len); 
 
   // Set the CS Low
+  cyhal_gpio_write(PIN_SPI_IMU_CS,0);
 
   // Starts a data transfer
+  rslt = cyhal_spi_transfer(&mSPI,tx,len+1,rx,len+1,0x00);
 
   // Set the CS High
+  cyhal_gpio_write(PIN_SPI_IMU_CS,1); 
 
   // Copy the data returned from IMU to the destination address
   memcpy(bufp, (rx + 1), len);
@@ -284,7 +295,6 @@ static int32_t platform_read(void *handle, uint8_t reg, uint8_t *bufp,
  */
 static void tx_com(uint8_t *tx_buffer, uint16_t len)
 {
-  printf("%s", tx_buffer);
 }
 
 /*

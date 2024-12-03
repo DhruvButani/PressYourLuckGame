@@ -88,6 +88,7 @@ bool pyl_ipc_rx(game_info_msg_t *game_info) {
  */
 bool pyl_ipc_tx(game_info_msg_t *game_info)
 {
+    
     circular_buffer_add(Tx_Circular_Buffer, REMOTE_PACKET_START);  // 0xA0
     circular_buffer_add(Tx_Circular_Buffer, CMD_UPDATE_REMOTE_DATA); // 0xB1
     circular_buffer_add(Tx_Circular_Buffer, (uint8_t)((game_info->score & 0xFF00) >> 8));
@@ -96,18 +97,10 @@ bool pyl_ipc_tx(game_info_msg_t *game_info)
     circular_buffer_add(Tx_Circular_Buffer, game_info->passed);
     circular_buffer_add(Tx_Circular_Buffer, REMOTE_PACKET_END);   // 0xA1
 
-    for(int i = 0; i<7; i++) {
-        printf("%d ",Tx_Circular_Buffer->data[i]);
-    }
-    printf("\n");
-
-    // enable tx event 
     cyhal_uart_enable_event(&remote_uart_obj, (cyhal_uart_event_t)CYHAL_UART_IRQ_TX_EMPTY, 7, true); //Transmit buffer is empty
     return true;
 
 }
-
-
 
 /**
  * @brief 
@@ -115,6 +108,7 @@ bool pyl_ipc_tx(game_info_msg_t *game_info)
  * @param callback_arg 
  * @param event 
  */
+
 void handler_ipc(void *callback_arg, cyhal_uart_event_t event)
 {
     uint8_t c;
@@ -123,16 +117,17 @@ void handler_ipc(void *callback_arg, cyhal_uart_event_t event)
     (void) callback_arg;
     (void) event;
 
-    if ((event & CYHAL_UART_IRQ_TX_ERROR) == CYHAL_UART_IRQ_TX_ERROR)
+    if (event == CYHAL_UART_IRQ_TX_ERROR)
     {
       /* An error occurred in Tx */
       /* Insert application code to handle Tx error */
 
     }
-    else if ((event & CYHAL_UART_IRQ_RX_NOT_EMPTY) == CYHAL_UART_IRQ_RX_NOT_EMPTY)
+    else if (event == CYHAL_UART_IRQ_RX_NOT_EMPTY)
     {
 
         /* Read in the current character */
+        char c;
         if(CY_RSLT_SUCCESS == cyhal_uart_getc(&remote_uart_obj, &c,0)) {
 
             /* If REMOTE_PACKET_END received, set the corresponding bit in ECE353_Event */
@@ -146,7 +141,7 @@ void handler_ipc(void *callback_arg, cyhal_uart_event_t event)
 
     }
 
-    else if ((event & CYHAL_UART_IRQ_TX_EMPTY) == CYHAL_UART_IRQ_TX_EMPTY) //if empty tx_interrupt recieved then process tx buffer 
+    else if (event == CYHAL_UART_IRQ_TX_EMPTY) //if empty tx_interrupt recieved then process tx buffer 
     {
         /* The UART finished transferring data, so check and see if
         * there is more data in the circular buffer to send*/
@@ -159,6 +154,7 @@ void handler_ipc(void *callback_arg, cyhal_uart_event_t event)
        }
 
        else {
+        //disable event
         cyhal_uart_enable_event(&remote_uart_obj,(cyhal_uart_event_t)CYHAL_UART_IRQ_TX_EMPTY, 7, false);
        }
 

@@ -249,10 +249,7 @@
  drivers/timer.h drivers/pwm-buzzer.h drivers/spi.h drivers/lsm6dsm_reg.h \
  drivers/imu.h drivers/lsm6dsm_reg.h drivers/i2c.h drivers/LM75.h \
  drivers/io-expander.h drivers/i2c.h drivers/ft6x06.h \
- drivers/light-sensor.h press-your-luck/pyl.h \
- press-your-luck/pyl_images.h drivers/io-lcd.h \
- press-your-luck/pyl_images.h press-your-luck/pyl_ipc.h \
- press-your-luck/pyl.h press-your-luck/pyl_handler_tmr_050_ms.h
+ drivers/light-sensor.h
 HW03-F24/hw03.h:
 main.h:
 ../mtb_shared/mtb-pdl-cat1/release-v3.11.0/devices/COMPONENT_CAT1A/include/cy_pdl.h:
@@ -524,10 +521,3 @@ drivers/io-expander.h:
 drivers/i2c.h:
 drivers/ft6x06.h:
 drivers/light-sensor.h:
-press-your-luck/pyl.h:
-press-your-luck/pyl_images.h:
-drivers/io-lcd.h:
-press-your-luck/pyl_images.h:
-press-your-luck/pyl_ipc.h:
-press-your-luck/pyl.h:
-press-your-luck/pyl_handler_tmr_050_ms.h:

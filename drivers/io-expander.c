@@ -22,10 +22,11 @@ static void io_expander_write_reg(uint8_t reg, uint8_t value)
 
 	/* ADD CODE */
 	/* Allocate the write data packet that will be sent to the IO Expander */
+	uint8_t write_data[2] = {reg, value};
 
 	/* ADD CODE */
 	/* Use cyhal_i2c_master_write to write the required data to the device. */
-
+	rslt = cyhal_i2c_master_write(&i2c_monarch_obj, TCA9534_SUBORDINATE_ADDR, write_data, 2, 0, true);
 	CY_ASSERT(rslt == CY_RSLT_SUCCESS);
 }
 
@@ -41,19 +42,21 @@ static uint8_t io_expander_read_reg(uint8_t reg)
 
 	/* ADD CODE */
 	/* Allocate the write data packet that will be sent to the IO Expander */
-	
+	//uint8_t write_data[1] = {reg};
 	/* ADD CODE */
 	/* Allocate the read data packet that will be sent from the IO Expander */
-
+	uint8_t read_data[1];
 	/* ADD CODE */
 	/* Use cyhal_i2c_master_write to write the required data to the device. */
-	
+	rslt = cyhal_i2c_master_write(&i2c_monarch_obj, TCA9534_SUBORDINATE_ADDR, &reg, 1, 0, false);
 	CY_ASSERT(rslt == CY_RSLT_SUCCESS);
 
 	/* ADD CODE */
 	/* Use cyhal_i2c_master_read to read the required data from the device. */
-	
+	rslt = cyhal_i2c_master_read(&i2c_monarch_obj, TCA9534_SUBORDINATE_ADDR, read_data, 1, 0, true);
 	CY_ASSERT(rslt == CY_RSLT_SUCCESS);
+
+	return_val = read_data;
 
 	return return_val;
 }

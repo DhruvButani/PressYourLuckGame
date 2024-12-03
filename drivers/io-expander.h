@@ -17,13 +17,13 @@
 #include "i2c.h"
 
 /* ADD CODE */
-#define TCA9534_SUBORDINATE_ADDR                 0x00
+#define TCA9534_SUBORDINATE_ADDR                0x20
 
 /* ADD CODE for IO Expander Register Addresses */
 #define TCA9534_INPUT_PORT_ADDR					 0x00
-#define TCA9534_OUTPUT_PORT_ADDR				 0x00
-#define TCA9534_POLARITY_ADDR					 0x00
-#define TCA9534_CONFIG_ADDR						 0x00
+#define TCA9534_OUTPUT_PORT_ADDR				 0x01
+#define TCA9534_POLARITY_ADDR					 0x02
+#define TCA9534_CONFIG_ADDR						 0x03
 
 /** Read the value of the input port
  *

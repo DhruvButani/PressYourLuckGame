@@ -10,8 +10,11 @@
 SEARCH_TARGET_ece353=bsps/TARGET_ece353
 
 # The search paths for the included middleware
+SEARCH_freertos=../mtb_shared/freertos/release-v10.5.002
 SEARCH_retarget-io=../mtb_shared/retarget-io/release-v1.5.0
+SEARCH_abstraction-rtos=../mtb_shared/abstraction-rtos/release-v1.8.2
 SEARCH_cat1cm0p=../mtb_shared/cat1cm0p/release-v1.5.0
+SEARCH_clib-support=../mtb_shared/clib-support/release-v1.5.0
 SEARCH_cmsis=../mtb_shared/cmsis/release-v5.8.0
 SEARCH_core-lib=../mtb_shared/core-lib/release-v1.4.2
 SEARCH_core-make=../mtb_shared/core-make/release-v3.3.1
@@ -20,8 +23,11 @@ SEARCH_mtb-pdl-cat1=../mtb_shared/mtb-pdl-cat1/release-v3.11.0
 SEARCH_recipe-make-cat1a=../mtb_shared/recipe-make-cat1a/release-v2.2.1
 
 # Search libraries added to build
+SEARCH_MTB_MK+=$(SEARCH_freertos)
 SEARCH_MTB_MK+=$(SEARCH_retarget-io)
+SEARCH_MTB_MK+=$(SEARCH_abstraction-rtos)
 SEARCH_MTB_MK+=$(SEARCH_cat1cm0p)
+SEARCH_MTB_MK+=$(SEARCH_clib-support)
 SEARCH_MTB_MK+=$(SEARCH_cmsis)
 SEARCH_MTB_MK+=$(SEARCH_core-lib)
 SEARCH_MTB_MK+=$(SEARCH_core-make)
@@ -30,8 +36,11 @@ SEARCH_MTB_MK+=$(SEARCH_mtb-pdl-cat1)
 SEARCH_MTB_MK+=$(SEARCH_recipe-make-cat1a)
 
 -include $(CY_INTERNAL_APP_PATH)/importedbsp.mk
+COMPONENTS += MW_FREERTOS
 COMPONENTS += MW_RETARGET_IO
+COMPONENTS += MW_ABSTRACTION_RTOS
 COMPONENTS += MW_CAT1CM0P
+COMPONENTS += MW_CLIB_SUPPORT
 COMPONENTS += MW_CMSIS
 COMPONENTS += MW_CORE_LIB
 COMPONENTS += MW_CORE_MAKE

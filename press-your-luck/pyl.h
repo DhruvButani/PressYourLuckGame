@@ -117,4 +117,6 @@ void pyl_draw_square(uint8_t square_id);
 void pyl_draw_image(image_t *image);
 void pyl_images_randomize(image_t *images);
 
+
+
 #endif

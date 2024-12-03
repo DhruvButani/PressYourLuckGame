@@ -17,7 +17,16 @@
     "cortex-debug.JLinkGDBServerPath.osx": "/Applications/SEGGER/JLink/JLinkGDBServerCLExe",
     "cortex-debug.JLinkGDBServerPath.linux": "JLinkGDBServerCLExe",
     "files.associations": {
-        "cy_retarget_io.h": "c",
-        "cybsp.h": "c"
+        "task_io_expander.h": "c",
+        "task_remote_tx.h": "c",
+        "task_lcd_squares.h": "c",
+        "task_console.h": "c",
+        "task_lcd_game_info.h": "c",
+        "task_remote_rx.h": "c",
+        "pyl.h": "c",
+        "task_eeprom.h": "c",
+        "ece353_tasks.h": "c",
+        "task_game_control.h": "c",
+        "random": "cpp"
     }
 }

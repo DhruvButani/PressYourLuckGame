@@ -85,13 +85,14 @@ void remote_uart_tx_data_async(char *msg, uint16_t num_bytes)
     {
         /* Wait while the circular buffer is full*/
         uint8_t i = 0;
-        // while(circular_buffer_full(Tx_Circular_Buffer))
-        // {
+        while(circular_buffer_full(Tx_Circular_Buffer))
+        {
         
-        // }
+        }
 
         /* Disable interrupts -- Disable NVIC */
         __disable_fault_irq();
+        
         
         /* Add the current character*/
         circular_buffer_add(Tx_Circular_Buffer, msg[i]);

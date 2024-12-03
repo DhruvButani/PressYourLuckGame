@@ -1,8 +1,10 @@
 CY_SEARCH_ALL_FILES:= \
   .DS_Store \
   .mtbqueryapi \
+  ECE353-HW05-F24.hex \
   ece353-mtb-starter-bm-app.code-workspace \
   ECE353-Staff-HW03-F24.hex \
+  library-manager.log \
   LICENSE \
   main.c \
   main.h \
@@ -52,6 +54,7 @@ CY_SEARCH_ALL_FILES:= \
   deps/.DS_Store \
   deps/Add your library dependencies in this folder.txt \
   deps/assetlocks.json \
+  deps/freertos.mtb \
   deps/retarget-io.mtb \
   drivers/circular_buffer.c \
   drivers/circular_buffer.h \
@@ -98,47 +101,23 @@ CY_SEARCH_ALL_FILES:= \
   drivers/systick.h \
   drivers/timer.c \
   drivers/timer.h \
-  example/ex01.c \
-  example/ex02.c \
-  example/ex03.c \
-  example/ex05.c \
-  example/ex06.c \
-  example/ex07.c \
-  example/ex08.c \
-  example/ex09.c \
-  example/ex13.c \
-  example/ex14.c \
-  example/ex15.c \
-  example/ex16.c \
-  example/ex17.c \
-  example/ex18.c \
   hw01/hw01.c \
   hw01/hw01.code-workspace \
   hw01/hw01.h \
   hw02/hw02.c \
   hw02/hw02.h \
-  HW03-F24/hw03.c \
-  HW03-F24/hw03.h \
-  ice/ice01.c \
-  ice/ice02.c \
-  ice/ice03.c \
-  ice/ice04.c \
-  ice/ice05.c \
-  ice/ice06.c \
-  ice/ice07.c \
-  ice/ice08.c \
-  ice/ice09.c \
-  ice/ice10.c \
-  ice/ice11.c \
-  ice/ice12.c \
-  ice/ice13.c \
-  ice/ice14.c \
-  ice/ice15.c \
-  ice/ice16.c \
-  ice/ice17.c \
-  ice/ice18.c \
+  hw03/hw03.c \
+  hw03/hw03.h \
+  hw04/hw04.c \
+  hw04/hw04.h \
+  hw05/hw05.c \
+  hw05/hw05.h \
+  hw05/task_game_control.c \
+  hw05/task_game_control.h \
+  libs/abstraction-rtos.mtb \
   libs/app.mk \
   libs/cat1cm0p.mtb \
+  libs/clib-support.mtb \
   libs/cmsis.mtb \
   libs/core-lib.mtb \
   libs/core-make.mtb \
@@ -147,8 +126,11 @@ CY_SEARCH_ALL_FILES:= \
   libs/mtb-pdl-cat1.mtb \
   libs/mtb.mk \
   libs/recipe-make-cat1a.mtb \
+  press-your-luck/.DS_Store \
   press-your-luck/pyl.c \
   press-your-luck/pyl.h \
+  press-your-luck/pyl_handler_io_exp.c \
+  press-your-luck/pyl_handler_io_exp.h \
   press-your-luck/pyl_handler_tmr_050_ms.c \
   press-your-luck/pyl_handler_tmr_050_ms.h \
   press-your-luck/pyl_images.c \
@@ -156,6 +138,111 @@ CY_SEARCH_ALL_FILES:= \
   press-your-luck/pyl_ipc.c \
   press-your-luck/pyl_ipc.h \
   press-your-luck/Users:dhruvbutani:ece353:ec.textClipping \
+  press-your-luck/tasks/ece353_tasks.h \
+  press-your-luck/tasks/task_console.c \
+  press-your-luck/tasks/task_console.h \
+  press-your-luck/tasks/task_eeprom.c \
+  press-your-luck/tasks/task_eeprom.h \
+  press-your-luck/tasks/task_io_expander.c \
+  press-your-luck/tasks/task_io_expander.h \
+  press-your-luck/tasks/task_lcd_game_info.c \
+  press-your-luck/tasks/task_lcd_game_info.h \
+  press-your-luck/tasks/task_lcd_squares.c \
+  press-your-luck/tasks/task_lcd_squares.h \
+  press-your-luck/tasks/task_remote_rx.c \
+  press-your-luck/tasks/task_remote_rx.h \
+  press-your-luck/tasks/task_remote_tx.c \
+  press-your-luck/tasks/task_remote_tx.h \
+  press-your-luck/tasks/task_sw.c \
+  press-your-luck/tasks/task_sw.h \
+  ../mtb_shared/freertos/release-v10.5.002/EULA \
+  ../mtb_shared/freertos/release-v10.5.002/freertos-kernel-version.txt \
+  ../mtb_shared/freertos/release-v10.5.002/LICENSE \
+  ../mtb_shared/freertos/release-v10.5.002/README.md \
+  ../mtb_shared/freertos/release-v10.5.002/RELEASE.md \
+  ../mtb_shared/freertos/release-v10.5.002/version.xml \
+  ../mtb_shared/freertos/release-v10.5.002/docs/api_reference_manual.html \
+  ../mtb_shared/freertos/release-v10.5.002/docs/api_reference_manual/html/bc_s.png \
+  ../mtb_shared/freertos/release-v10.5.002/docs/api_reference_manual/html/bdwn.png \
+  ../mtb_shared/freertos/release-v10.5.002/docs/api_reference_manual/html/closed.png \
+  ../mtb_shared/freertos/release-v10.5.002/docs/api_reference_manual/html/cypress_logo.png \
+  ../mtb_shared/freertos/release-v10.5.002/docs/api_reference_manual/html/doc.png \
+  ../mtb_shared/freertos/release-v10.5.002/docs/api_reference_manual/html/doxygen.png \
+  ../mtb_shared/freertos/release-v10.5.002/docs/api_reference_manual/html/doxygen_style.css \
+  ../mtb_shared/freertos/release-v10.5.002/docs/api_reference_manual/html/dynsections.js \
+  ../mtb_shared/freertos/release-v10.5.002/docs/api_reference_manual/html/folderclosed.png \
+  ../mtb_shared/freertos/release-v10.5.002/docs/api_reference_manual/html/folderopen.png \
+  ../mtb_shared/freertos/release-v10.5.002/docs/api_reference_manual/html/index.html \
+  ../mtb_shared/freertos/release-v10.5.002/docs/api_reference_manual/html/jquery.js \
+  ../mtb_shared/freertos/release-v10.5.002/docs/api_reference_manual/html/nav_f.png \
+  ../mtb_shared/freertos/release-v10.5.002/docs/api_reference_manual/html/nav_g.png \
+  ../mtb_shared/freertos/release-v10.5.002/docs/api_reference_manual/html/nav_h.png \
+  ../mtb_shared/freertos/release-v10.5.002/docs/api_reference_manual/html/open.png \
+  ../mtb_shared/freertos/release-v10.5.002/docs/api_reference_manual/html/splitbar.png \
+  ../mtb_shared/freertos/release-v10.5.002/docs/api_reference_manual/html/sync_off.png \
+  ../mtb_shared/freertos/release-v10.5.002/docs/api_reference_manual/html/sync_on.png \
+  ../mtb_shared/freertos/release-v10.5.002/docs/api_reference_manual/html/tab_a.png \
+  ../mtb_shared/freertos/release-v10.5.002/docs/api_reference_manual/html/tab_b.png \
+  ../mtb_shared/freertos/release-v10.5.002/docs/api_reference_manual/html/tab_h.png \
+  ../mtb_shared/freertos/release-v10.5.002/docs/api_reference_manual/html/tab_s.png \
+  ../mtb_shared/freertos/release-v10.5.002/docs/api_reference_manual/html/tabs.css \
+  ../mtb_shared/freertos/release-v10.5.002/docs/api_reference_manual/html/search/all_0.html \
+  ../mtb_shared/freertos/release-v10.5.002/docs/api_reference_manual/html/search/all_0.js \
+  ../mtb_shared/freertos/release-v10.5.002/docs/api_reference_manual/html/search/close.png \
+  ../mtb_shared/freertos/release-v10.5.002/docs/api_reference_manual/html/search/mag_sel.png \
+  ../mtb_shared/freertos/release-v10.5.002/docs/api_reference_manual/html/search/nomatches.html \
+  ../mtb_shared/freertos/release-v10.5.002/docs/api_reference_manual/html/search/pages_0.html \
+  ../mtb_shared/freertos/release-v10.5.002/docs/api_reference_manual/html/search/pages_0.js \
+  ../mtb_shared/freertos/release-v10.5.002/docs/api_reference_manual/html/search/search.css \
+  ../mtb_shared/freertos/release-v10.5.002/docs/api_reference_manual/html/search/search.js \
+  ../mtb_shared/freertos/release-v10.5.002/docs/api_reference_manual/html/search/search_l.png \
+  ../mtb_shared/freertos/release-v10.5.002/docs/api_reference_manual/html/search/search_m.png \
+  ../mtb_shared/freertos/release-v10.5.002/docs/api_reference_manual/html/search/search_r.png \
+  ../mtb_shared/freertos/release-v10.5.002/docs/api_reference_manual/html/search/searchdata.js \
+  ../mtb_shared/freertos/release-v10.5.002/docs/api_reference_manual/xml/combine.xslt \
+  ../mtb_shared/freertos/release-v10.5.002/docs/api_reference_manual/xml/compound.xsd \
+  ../mtb_shared/freertos/release-v10.5.002/docs/api_reference_manual/xml/doxyfile__main__page_8txt.xml \
+  ../mtb_shared/freertos/release-v10.5.002/docs/api_reference_manual/xml/index.xml \
+  ../mtb_shared/freertos/release-v10.5.002/docs/api_reference_manual/xml/index.xsd \
+  ../mtb_shared/freertos/release-v10.5.002/docs/api_reference_manual/xml/indexpage.xml \
+  ../mtb_shared/freertos/release-v10.5.002/Source/croutine.c \
+  ../mtb_shared/freertos/release-v10.5.002/Source/event_groups.c \
+  ../mtb_shared/freertos/release-v10.5.002/Source/list.c \
+  ../mtb_shared/freertos/release-v10.5.002/Source/queue.c \
+  ../mtb_shared/freertos/release-v10.5.002/Source/readme.txt \
+  ../mtb_shared/freertos/release-v10.5.002/Source/stream_buffer.c \
+  ../mtb_shared/freertos/release-v10.5.002/Source/tasks.c \
+  ../mtb_shared/freertos/release-v10.5.002/Source/timers.c \
+  ../mtb_shared/freertos/release-v10.5.002/Source/include/atomic.h \
+  ../mtb_shared/freertos/release-v10.5.002/Source/include/croutine.h \
+  ../mtb_shared/freertos/release-v10.5.002/Source/include/deprecated_definitions.h \
+  ../mtb_shared/freertos/release-v10.5.002/Source/include/event_groups.h \
+  ../mtb_shared/freertos/release-v10.5.002/Source/include/FreeRTOS.h \
+  ../mtb_shared/freertos/release-v10.5.002/Source/include/list.h \
+  ../mtb_shared/freertos/release-v10.5.002/Source/include/message_buffer.h \
+  ../mtb_shared/freertos/release-v10.5.002/Source/include/mpu_prototypes.h \
+  ../mtb_shared/freertos/release-v10.5.002/Source/include/mpu_wrappers.h \
+  ../mtb_shared/freertos/release-v10.5.002/Source/include/portable.h \
+  ../mtb_shared/freertos/release-v10.5.002/Source/include/projdefs.h \
+  ../mtb_shared/freertos/release-v10.5.002/Source/include/queue.h \
+  ../mtb_shared/freertos/release-v10.5.002/Source/include/semphr.h \
+  ../mtb_shared/freertos/release-v10.5.002/Source/include/stack_macros.h \
+  ../mtb_shared/freertos/release-v10.5.002/Source/include/StackMacros.h \
+  ../mtb_shared/freertos/release-v10.5.002/Source/include/stdint.readme \
+  ../mtb_shared/freertos/release-v10.5.002/Source/include/stream_buffer.h \
+  ../mtb_shared/freertos/release-v10.5.002/Source/include/task.h \
+  ../mtb_shared/freertos/release-v10.5.002/Source/include/timers.h \
+  ../mtb_shared/freertos/release-v10.5.002/Source/portable/readme.txt \
+  ../mtb_shared/freertos/release-v10.5.002/Source/portable/COMPONENT_CM4/FreeRTOSConfig.h \
+  ../mtb_shared/freertos/release-v10.5.002/Source/portable/COMPONENT_CM4/TOOLCHAIN_GCC_ARM/port.c \
+  ../mtb_shared/freertos/release-v10.5.002/Source/portable/COMPONENT_CM4/TOOLCHAIN_GCC_ARM/portmacro.h \
+  ../mtb_shared/freertos/release-v10.5.002/Source/portable/MemMang/heap_1.c \
+  ../mtb_shared/freertos/release-v10.5.002/Source/portable/MemMang/heap_2.c \
+  ../mtb_shared/freertos/release-v10.5.002/Source/portable/MemMang/heap_3.c \
+  ../mtb_shared/freertos/release-v10.5.002/Source/portable/MemMang/heap_4.c \
+  ../mtb_shared/freertos/release-v10.5.002/Source/portable/MemMang/heap_5.c \
+  ../mtb_shared/freertos/release-v10.5.002/Source/portable/MemMang/ReadMe.url \
+  ../mtb_shared/freertos/release-v10.5.002/Source/portable/MemMang/static_malloc.txt \
   ../mtb_shared/retarget-io/release-v1.5.0/.cyignore \
   ../mtb_shared/retarget-io/release-v1.5.0/cy_retarget_io.c \
   ../mtb_shared/retarget-io/release-v1.5.0/cy_retarget_io.h \
@@ -164,6 +251,22 @@ CY_SEARCH_ALL_FILES:= \
   ../mtb_shared/retarget-io/release-v1.5.0/props.json \
   ../mtb_shared/retarget-io/release-v1.5.0/README.md \
   ../mtb_shared/retarget-io/release-v1.5.0/RELEASE.md \
+  ../mtb_shared/abstraction-rtos/release-v1.8.2/.cyignore \
+  ../mtb_shared/abstraction-rtos/release-v1.8.2/EULA \
+  ../mtb_shared/abstraction-rtos/release-v1.8.2/LICENSE \
+  ../mtb_shared/abstraction-rtos/release-v1.8.2/props.json \
+  ../mtb_shared/abstraction-rtos/release-v1.8.2/README.md \
+  ../mtb_shared/abstraction-rtos/release-v1.8.2/RELEASE.md \
+  ../mtb_shared/abstraction-rtos/release-v1.8.2/include/cy_worker_thread.h \
+  ../mtb_shared/abstraction-rtos/release-v1.8.2/include/cyabs_rtos.h \
+  ../mtb_shared/abstraction-rtos/release-v1.8.2/include/cyabs_rtos_internal.h \
+  ../mtb_shared/abstraction-rtos/release-v1.8.2/include/COMPONENT_FREERTOS/cyabs_rtos_dsram.h \
+  ../mtb_shared/abstraction-rtos/release-v1.8.2/include/COMPONENT_FREERTOS/cyabs_rtos_impl.h \
+  ../mtb_shared/abstraction-rtos/release-v1.8.2/source/cy_worker_thread.c \
+  ../mtb_shared/abstraction-rtos/release-v1.8.2/source/COMPONENT_FREERTOS/cyabs_freertos_common.c \
+  ../mtb_shared/abstraction-rtos/release-v1.8.2/source/COMPONENT_FREERTOS/cyabs_freertos_helpers.c \
+  ../mtb_shared/abstraction-rtos/release-v1.8.2/source/COMPONENT_FREERTOS/cyabs_rtos_dsram.c \
+  ../mtb_shared/abstraction-rtos/release-v1.8.2/source/COMPONENT_FREERTOS/cyabs_rtos_freertos.c \
   ../mtb_shared/cat1cm0p/release-v1.5.0/bin2c.py \
   ../mtb_shared/cat1cm0p/release-v1.5.0/elf2c.bat \
   ../mtb_shared/cat1cm0p/release-v1.5.0/elf2c.sh \
@@ -190,6 +293,18 @@ CY_SEARCH_ALL_FILES:= \
   ../mtb_shared/cat1cm0p/release-v1.5.0/COMPONENT_CAT1A/COMPONENT_CM0P_SLEEP/tviibe4m_cm0p_sleep.c \
   ../mtb_shared/cat1cm0p/release-v1.5.0/COMPONENT_CAT1A/COMPONENT_CM0P_SLEEP/tviibe512k_cm0p_sleep.bin \
   ../mtb_shared/cat1cm0p/release-v1.5.0/COMPONENT_CAT1A/COMPONENT_CM0P_SLEEP/tviibe512k_cm0p_sleep.c \
+  ../mtb_shared/clib-support/release-v1.5.0/.cyignore \
+  ../mtb_shared/clib-support/release-v1.5.0/cy_mutex_pool.h \
+  ../mtb_shared/clib-support/release-v1.5.0/cy_time.c \
+  ../mtb_shared/clib-support/release-v1.5.0/cy_time.h \
+  ../mtb_shared/clib-support/release-v1.5.0/EULA \
+  ../mtb_shared/clib-support/release-v1.5.0/LICENSE \
+  ../mtb_shared/clib-support/release-v1.5.0/props.json \
+  ../mtb_shared/clib-support/release-v1.5.0/README.md \
+  ../mtb_shared/clib-support/release-v1.5.0/RELEASE.md \
+  ../mtb_shared/clib-support/release-v1.5.0/COMPONENT_FREERTOS/cy_mutex_pool.c \
+  ../mtb_shared/clib-support/release-v1.5.0/TOOLCHAIN_GCC_ARM/cy_clib_support_newlib.c \
+  ../mtb_shared/clib-support/release-v1.5.0/TOOLCHAIN_GCC_ARM/cy_mutex_pool_cfg.h \
   ../mtb_shared/cmsis/release-v5.8.0/LICENSE.txt \
   ../mtb_shared/cmsis/release-v5.8.0/README.md \
   ../mtb_shared/cmsis/release-v5.8.0/RELEASE.md \
@@ -1114,11 +1229,25 @@ CY_SEARCH_ALL_INCLUDES:= \
   drivers \
   hw01 \
   hw02 \
-  HW03-F24 \
+  hw03 \
+  hw04 \
+  hw05 \
   press-your-luck \
+  press-your-luck/tasks \
+  ../mtb_shared/freertos/release-v10.5.002/Source/include \
+  ../mtb_shared/freertos/release-v10.5.002/Source \
+  ../mtb_shared/freertos/release-v10.5.002 \
+  ../mtb_shared/freertos/release-v10.5.002/Source/portable/COMPONENT_CM4 \
+  ../mtb_shared/freertos/release-v10.5.002/Source/portable \
+  ../mtb_shared/freertos/release-v10.5.002/Source/portable/COMPONENT_CM4/TOOLCHAIN_GCC_ARM \
   ../mtb_shared/retarget-io/release-v1.5.0 \
+  ../mtb_shared/abstraction-rtos/release-v1.8.2/include \
+  ../mtb_shared/abstraction-rtos/release-v1.8.2 \
+  ../mtb_shared/abstraction-rtos/release-v1.8.2/include/COMPONENT_FREERTOS \
   ../mtb_shared/cat1cm0p/release-v1.5.0/COMPONENT_CAT1A \
   ../mtb_shared/cat1cm0p/release-v1.5.0 \
+  ../mtb_shared/clib-support/release-v1.5.0 \
+  ../mtb_shared/clib-support/release-v1.5.0/TOOLCHAIN_GCC_ARM \
   ../mtb_shared/cmsis/release-v5.8.0/Core/Include \
   ../mtb_shared/cmsis/release-v5.8.0/Core \
   ../mtb_shared/cmsis/release-v5.8.0 \

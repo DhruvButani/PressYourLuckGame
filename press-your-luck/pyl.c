@@ -402,8 +402,19 @@ static inline void pyl_images_randomize_whammies(image_t *images, uint8_t num_wh
         images[index] = IMG_INFO_LUT[IMG_TYPE_WHAMMY];
         num_whammies--;
       }
-
     }
+
+}
+
+/**
+ * @brief
+ * This function reads the high score from the EEPROM and returns 
+ */
+uint16_t pyl_eeprom_high_score_read() {
+    uint16_t high_score[2*sizeof(uint8_t)] = {eeprom_read_byte((uint16_t)(0x20)),eeprom_read_byte((uint16_t)(0x21))};
+    
+    return ((uint16_t)high_score[1] << 8) | high_score[0];
+
 }
 
 

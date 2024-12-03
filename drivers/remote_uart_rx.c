@@ -43,7 +43,7 @@ bool remote_uart_rx_data_async(char *msg, uint16_t max_size)
     }
 
     /* If the circular buffer is empty, return false */
-    if(Rx_Circular_Buffer == 0)
+    if(circular_buffer_empty(Rx_Circular_Buffer))
     {
         return false;
     }
@@ -59,7 +59,7 @@ bool remote_uart_rx_data_async(char *msg, uint16_t max_size)
         *msg = circular_buffer_remove(Rx_Circular_Buffer);
         msg++;
     }
-  
+
 
     /* Re-enable interrupts -- Enable NVIC */
     __enable_irq();
@@ -77,9 +77,9 @@ bool remote_uart_rx_data_async(char *msg, uint16_t max_size)
 void remote_uart_rx_interrupts_init(void)
 {
     /* ADD CODE */
-    uint16_t max_size = 80;
+        //uint16_t max_size = 7;
     /* Initialize Rx_Circular_Buffer */
-    Rx_Circular_Buffer = circular_buffer_init(max_size);
+        //Rx_Circular_Buffer = circular_buffer_init(max_size);
 
     /* Turn on Rx interrupts */
     cyhal_uart_enable_event(
