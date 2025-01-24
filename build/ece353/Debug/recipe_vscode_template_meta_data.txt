@@ -1,3 +1,0 @@
-TEMPLATE_REPLACE=../mtb_shared/recipe-make-cat1a/release-v2.2.1/make/scripts/interface_version_2/vscode/CMx/openocd.tcl=openocd.tcl
-TEMPLATE_REPLACE=../mtb_shared/recipe-make-cat1a/release-v2.2.1/make/scripts/interface_version_2/vscode/CMx/KitProg3/launch.json=.vscode/launch.json
-TEMPLATE_REPLACE=../mtb_shared/core-make/release-v3.3.1/make/scripts/interface_version_2/vscode/tasks.json=.vscode/tasks.json
